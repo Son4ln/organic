@@ -653,6 +653,31 @@
 						</div>
 						<div id="prod-list">
 							<div class="prod-row">
+								<div class="row">
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<label><input type="checkbox" value=""> <div class="bg-icon">VA</div> View All</label>
+									</div>
+									
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<label><input type="checkbox" value=""> <div class="bg-icon">CO</div> Certified Organic</label>
+									</div>
+									
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<label><input type="checkbox" value=""> <div class="bg-icon">OI</div> Organic Ingredients</label>
+									</div>
+									
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<label><input type="checkbox" value=""> <span class="bg-icon">VF</span> Vegan Friendly</label>
+									</div>
+									
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<label><input type="checkbox" value=""> <span class="bg-icon">N</span> Natural</label>
+									</div>
+									
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<label><input type="checkbox" value=""> <span class="bg-icon">V</span> Vegan</label>
+									</div>
+								</div>
 								<?php
 									if( $countPro[0]==0){
 										echo 'Chưa có loại sản phẩm này!';
@@ -786,82 +811,99 @@
 												}
 											}
 										}
+										?>
+										
+											<div class="row">
+										<?php
 										foreach ($showPro as $list){
 											?>
-											<div class="prod" style="margin-bottom: 40px;margin-top: 40px;">
-												<div class="prod-img">
-													<a href="?action=viewProduct&id=<?php echo $list['product_id']; ?>">
-														<img src="<?php echo '../controller/public/client/images/product/'.$list['product_image']; ?>" alt="<?php echo $list['product_name']; ?>" title="<?php echo $list['product_name']; ?>"></a>
-												</div>
-												<div class="prod-text">
-													<h2>
-														<a href="?action=viewProduct&id=<?php echo $list['product_id']; ?>"><?php echo $list['product_name']; ?></a>
-													</h2>
-													<p class="desc"><?php echo nl2br($list['product_description']); ?></p>
-														<?php 
-															if($list['product_in_stock'] == 0){
-																echo '<p><span class="price">Sold out   </span>';
-															}else{
-														?>
-													<?php
-														if($list['product_discount']!=0){
-													?>
-													<span class="rrp">Old Price:
-														<?php
-															if($list['product_currency']== 'vnđ' || $list['product_currency']== 'đ' || $list['product_currency']== 'vnd' || $list['product_currency']== 'đồng'){
-														?>
-														<span class="rrp-price"><?php  echo '<span>'.number_format($list['product_price'],2).'</span><span> '.$list['product_currency'].'<span>'; ?>
-														<?php
-															} else{
-														?>
-														<span class="rrp-price"><?php  echo '<span>'.$list['product_currency'].number_format($list['product_price'],2).'</span><span> '.'<span>'; ?>
-														<?php
-														} }else{
-															echo '<br />';
-														}
-														?>
-													<div class="add-box">
-																<form action="?action=add_cart" method="post" name="add_cart">
-																	<input type="hidden" name="productkey" value="<?php echo $list['product_id'];?>"/>
-																		<input class="add-qty" id="quantity" name="itemqty" type="hidden" value="1">
-																		<input type="submit" class="add-btn" value="Add to Cart" >
-																</form>
-														<?php
-															if($list['product_discount']==0){
-														?>
-														<?php
-															if($list['product_currency']== 'vnđ' || $list['product_currency']== 'đ' || $list['product_currency']== 'vnd' || $list['product_currency']== 'đồng'){
-														?>
-														<span class="price"><?php  echo '<span>'.number_format($list['product_price'],2).'</span><span> '.$list['product_currency'].'<span>'; ?>
-														<?php
-															} else{
-														?>
-														<span class="price"><?php  echo '<span>'.$list['product_currency'].number_format($list['product_price'],2).'</span><span> '.'<span>'; ?>
-														<?php
-															}
-														?>
-														<?php
-															}else {
-															if($list['product_currency']== 'vnđ' || $list['product_currency']== 'đ' || $list['product_currency']== 'vnd' || $list['product_currency']== 'đồng'){
-														?>
-														<span class="price"><?php  echo '<span>'.number_format($list['product_discount'],2).'</span><span> '.$list['product_currency'].'<span>'; ?>
-														<?php
-															} else{
-														?>
-														<span class="price"><?php  echo '<span>'.$list['product_currency'].number_format($list['product_discount'],2).'</span><span> '.'<span>'; ?>
-														<?php
-															}}
-														?>
+												<div class="col-sm-6 col-xs-12">
+													<div class="prod" style="margin-bottom: 40px;margin-top: 40px;">
+														<div class="row">
+															<div class="col-md-5 col-xs-10 col-xs-offset-1">
+																<div class="prod-img">
+																	<a href="?action=viewProduct&id=<?php echo $list['product_id']; ?>">
+																		<img src="<?php echo '../controller/public/client/images/product/'.$list['product_image']; ?>" alt="<?php echo $list['product_name']; ?>" title="<?php echo $list['product_name']; ?>"></a>
+																</div>
+															</div>
+															<div class="col-md-6 col-xs-12">
+																<div class="prod-text">
+																	<h2>
+																		<a href="?action=viewProduct&id=<?php echo $list['product_id']; ?>"><?php echo $list['product_name']; ?></a>
+																	</h2>
+																	<div class="bg-icon">OI</div><div class="bg-icon">CO</div><div class="bg-icon">N</div>
+																	<br/>
+																	<p class="desc"><?php echo nl2br($list['product_description']); ?></p>
+																		<?php 
+																			if($list['product_in_stock'] == 0){
+																				echo '<p><span class="price">Sold out   </span>';
+																			}else{
+																		?>
+																	<?php
+																		if($list['product_discount']!=0){
+																	?>
+																	<span class="rrp">Old Price:
+																		<?php
+																			if($list['product_currency']== 'vnđ' || $list['product_currency']== 'đ' || $list['product_currency']== 'vnd' || $list['product_currency']== 'đồng'){
+																		?>
+																		<span class="rrp-price"><?php  echo '<span>'.number_format($list['product_price'],2).'</span><span> '.$list['product_currency'].'<span>'; ?>
+																		<?php
+																			} else{
+																		?>
+																		<span class="rrp-price"><?php  echo '<span>'.$list['product_currency'].number_format($list['product_price'],2).'</span><span> '.'<span>'; ?>
+																		<?php
+																		} }else{
+																			echo '<br />';
+																		}
+																		?>
+																	<div class="add-box">
+																				<form action="?action=add_cart" method="post" name="add_cart">
+																					<input type="hidden" name="productkey" value="<?php echo $list['product_id'];?>"/>
+																						<input class="add-qty" id="quantity" name="itemqty" type="hidden" value="1">
+																						<input type="submit" class="add-btn btn" value="Add to Cart" >
+																				</form>
+																		<?php
+																			if($list['product_discount']==0){
+																		?>
+																		<?php
+																			if($list['product_currency']== 'vnđ' || $list['product_currency']== 'đ' || $list['product_currency']== 'vnd' || $list['product_currency']== 'đồng'){
+																		?>
+																		<span class="price"><?php  echo '<span>'.number_format($list['product_price'],2).'</span><span> '.$list['product_currency'].'<span>'; ?>
+																		<?php
+																			} else{
+																		?>
+																		<span class="price"><?php  echo '<span>'.$list['product_currency'].number_format($list['product_price'],2).'</span><span> '.'<span>'; ?>
+																		<?php
+																			}
+																		?>
+																		<?php
+																			}else {
+																			if($list['product_currency']== 'vnđ' || $list['product_currency']== 'đ' || $list['product_currency']== 'vnd' || $list['product_currency']== 'đồng'){
+																		?>
+																		<span class="price"><?php  echo '<span>'.number_format($list['product_discount'],2).'</span><span> '.$list['product_currency'].'<span>'; ?>
+																		<?php
+																			} else{
+																		?>
+																		<span class="price"><?php  echo '<span>'.$list['product_currency'].number_format($list['product_discount'],2).'</span><span> '.'<span>'; ?>
+																		<?php
+																			}}
+																		?>
+																	</div>
+																	<?php
+																		}
+																	?>
+																</div>
+															</div>
+														</div>
 													</div>
-													<?php
-														}
-													?>
 												</div>
+										<?php
+											}
+										?>
 											</div>
-									<?php
+										<?php
 										}
-									}
-									?>
+										?>
 								<!-- -->
 							</div>
 						</div>

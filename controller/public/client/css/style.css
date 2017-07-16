@@ -8,7 +8,7 @@ img {
     max-width: 100%;
 }
 a {
-    color: #5bbd2b;
+    color: #5bbd2b;#5bbd2b;
     text-decoration: none;
     transition: all 0.5s ease;
 }
@@ -613,26 +613,31 @@ a.small {
     border-bottom: solid 1px #ccc;
     padding: 20px 0;
 }
-#prod-list .prod {
-    float: left;
-    width: 50%;
-    padding-right: 20px;
+#prod-list .prod-row  label input {
+	float: left;
+	margin-right: 7px;
+}
+#prod-list .prod-row .bg-icon {
+	width: 30px;
+	height: 20px;
+	background-color: #5bbd2b;
+	color: #fff;
+	line-height: 20px;
+	text-align: center;
+	float: left;
+	margin-right: 7px;
+	border-radius: 3px;
 }
 #prod-list .prod-img {
-    float: left;
     position: relative;
     text-align: center;
-    width: 120px;
 }
 #prod-list .prod-img a {
     display: block;
-    width: 100%;
     text-align: center;
     color: #fff;
 }
 #prod-list .prod-text {
-    float: right;
-    width: 180px;
     max-height: 200px;
     padding: 5px 0 0 0;
 }
@@ -650,10 +655,6 @@ h2 {
 }
 .rrp-price {
     background: url(../images/rrp-linethrough.gif) repeat-x 0 7px;
-}
-#prod-list .add-btn {
-    float: left;
-    margin-right: 10px;
 }
 #prod-list .price {
     font-size: 1.4em;
@@ -810,7 +811,6 @@ h2 {
 }
 .add-btn {
     margin: 2px 5px 0 0;
-    width: 80px;
     color: #fff;
     float: left;
     background: #5bbd2b;

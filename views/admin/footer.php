@@ -38,6 +38,21 @@
 
     });
 
+    setInterval(function(){
+        $.ajax({
+                  url : "../ajax/count-order.php",
+                  type : "post",
+                  dataType:"text",
+                  data : {
+                    
+                  },
+                  success : function (result){
+                    $('.count-order').html(result);
+                  }
+                });
+    
+    },1000);
+        
     </script>
 </body>
 

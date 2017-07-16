@@ -99,7 +99,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-paypal fa-fw"></i> Order<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-paypal fa-fw"></i> Order<span style="color : red;" class="count-order"></span><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="?action=orderList">List Order</a>

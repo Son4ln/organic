@@ -49,6 +49,21 @@
                         <li>
                             <a href="?action=admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
+
+                        <li>
+                           <a href="#"><i class="fa fa-flag"></i> Origin<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="?action=originList">List Origin</a>
+                                </li>
+                                <li>
+                                    <a href="?action=originAdd">Add Origin</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                            
                         <li>
                             <a href="#"><i class="fa fa-bold fa-fw"></i> Brands<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -86,6 +101,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
                         <li>
                             <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

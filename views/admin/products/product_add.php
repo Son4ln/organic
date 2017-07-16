@@ -10,6 +10,11 @@
                             <small>Add</small>
                         </h1>
                     </div>
+                    
+                    <div class="col-lg-12">
+                        <div class="alert" id="showMes"></div>
+                    </div>
+
                     <div class="col-lg-12">
                         <?php echo $alert; ?>
                     </div>

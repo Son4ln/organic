@@ -14,6 +14,9 @@
   case 'productAddAction':
     $products = new Products();
     // bắt lỗi và upload hình ảnh
+
+    try {
+
     if(empty($_FILES['fImages1']['name'])){
       $mes = "Ảnh 1 không được để trống";
       $alert = showAlert($mes);
@@ -49,7 +52,7 @@
         break;
     }
       if(isset($_FILES['fImages2'])){
-        $img1 = -'two'.'-'.time().'-'.$_FILES['fImages2']['name'];
+        $img1 = 'two'.'-'.time().'-'.$_FILES['fImages2']['name'];
         $source = $_FILES['fImages2']['tmp_name'];
         $target = $product_dir_path.DIRECTORY_SEPARATOR.$img1;
         move_uploaded_file($source, $target);
@@ -101,6 +104,26 @@
     $mes = 'Thêm sản phẩm thành công';
     $typeOfMes = 'alert-success';
     redirect($action,$mes,$typeOfMes);
+
+    } catch (PDOException $e) {
+        if(file_exists($product_dir_path.DIRECTORY_SEPARATOR.$img)){
+          unlink($product_dir_path.DIRECTORY_SEPARATOR.$img);
+        }
+
+        if(file_exists($product_dir_path.DIRECTORY_SEPARATOR.$img1)){
+          unlink($product_dir_path.DIRECTORY_SEPARATOR.$img1);
+        }
+
+        if(file_exists($product_dir_path.DIRECTORY_SEPARATOR.$img2)){
+          unlink($product_dir_path.DIRECTORY_SEPARATOR.$img2);
+        }
+
+
+      $action = 'productAdd';
+      $mes = 'Bạn phải có origin, brands, categories, features trước khi thêm sản phẩm ';
+      $typeOfMes = 'alert-danger';
+      redirect($action,$mes,$typeOfMes);
+    }
     break;
     // layout sửa sản phẩm
   case 'productEdit':

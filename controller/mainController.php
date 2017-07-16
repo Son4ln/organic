@@ -15,6 +15,7 @@ include "../models/products.php";
 include "../models/showTitle.php";
 include "../models/titles.php";
 include "../models/users.php";
+include "../models/product_line.php";
 include "../models/libs.php";
 include "../models/upload/image_util.php";
 require_once '../models/send_mail/messages.php';

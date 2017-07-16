@@ -4,5 +4,5 @@
 	$query = "SELECT COUNT(*) FROM orders WHERE order_status = 0";
 	$result = $db -> getInstance($query);
 
-	echo "($result[0])";
+	echo "($result[0]) new";
 ?>

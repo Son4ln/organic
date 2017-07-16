@@ -10,6 +10,8 @@ if(isset($_SESSION['username04516']) && $_SESSION['permission04516'] != 2){
 	}else if($_SESSION['permission04516'] != 0 && $action == "userList"){
 		echo "Bạn không có quyền thực hiện hành động này";
 	}
+
+include "../controller/controller/admin-controller/originController.php";	
 include "../controller/controller/admin-controller/brandController.php";
 include "../controller/controller/admin-controller/bannerController.php";
 include "../controller/controller/admin-controller/categoryController.php";
@@ -21,6 +23,8 @@ include "../controller/controller/admin-controller/orderController.php";
 include "../controller/controller/admin-controller/contactController.php";
 include "../controller/controller/admin-controller/featureController.php";
 include "../controller/controller/admin-controller/titleController.php";
+include "../controller/controller/admin-controller/productLineController.php";
+
 }else if(!isset($_SESSION['username04516']) && !isset($_SESSION['permission04516']) && $action == "admin"){
 	header("Location:./mainController.php");
 }

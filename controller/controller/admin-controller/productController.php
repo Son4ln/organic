@@ -100,6 +100,14 @@
     $user = $_SESSION['userId04576'];
     $products -> addProducts($name, $img, $img1, $img2, $price, $discount, $currency, $desc, $detail, $stock, $cate, $feature, $brand, $origin, $user);
 
+    $line = $_POST['lineId'];
+    $lastInsert = $products -> getLastProductInsert();
+
+    //thêm product line
+
+    $lines = new ProductLine();
+    $lines -> createProductLine($line, $lastInsert);
+
     $action = 'productList';
     $mes = 'Thêm sản phẩm thành công';
     $typeOfMes = 'alert-success';
@@ -252,5 +260,42 @@
     $typeOfMes = 'alert-success';
     redirect($action,$mes,$typeOfMes);
     break;
+
+  case 'addProductLine':
+    $alert = '';
+    $id = $_GET['id'];
+    include "../views/admin/products/add_line.php";
+    break;
+
+  case 'addProductLineAction':
+    $lines = new ProductLine();
+    $productId = $_POST['productId'];
+    foreach ($_POST['lName'] as $key) {
+      $lineId = $key;
+      $lines -> createProductLine($lineId, $productId);
+    }
+    
+    $action = "viewProductLine&id=$productId";
+    $mes = 'Thêm product line thành công';
+    $typeOfMes = 'alert-success';
+    redirect($action,$mes,$typeOfMes);
+    break;
+
+   case 'delProductLine':
+    $id = $_GET['id'];
+    $productId = $_GET['productId'];
+    $productsLine = new ProductLine();
+    $productsLine -> delProductLine($id);
+    $action = "viewProductLine&id=$productId";
+    $mes = 'Xóa product line thành công';
+    $typeOfMes = 'alert-success';
+    redirect($action,$mes,$typeOfMes);
+    break; 
+
+  case 'viewProductLine':
+    $id = $_GET['id'];
+    include "../views/admin/products/view_line.php";
+    break;
+
 	}
 ?>

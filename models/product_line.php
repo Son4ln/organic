@@ -71,6 +71,13 @@
 			$query = "delete from product_line where product_line_id ='$product_line_id'";
 			$db -> exec($query);
 		}
+
+		function getProductLineByProductId ($id){
+			$db = new connect();
+			$query = "select * from product_line where product_id = '$id'";
+			$result = $db -> getList($query);
+			return $result;
+		}
 		/* End ProductLine */
 	}
 ?>

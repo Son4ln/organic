@@ -1,12 +1,12 @@
 <?php include '../views/admin/header.php'; ?>
 <?php include '../views/admin/nav.php'; ?>
     <!-- container here -->
-<!-- Page Content -->
+ <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Origin
+                        <h1 class="page-header">Products lines
                             <small>List</small>
                         </h1>
                     </div>
@@ -17,27 +17,28 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr align="center">
-                                <th>Origin Id</th>
-                                <th>Họ Tên</th>
-                                <th>Thao tác</th>
+                                <th>ID</th>
+                                <th>Tên</th>
+                                <th>Ký hiệu</th>
+                                <th>Thao Tác</th>
                             </tr>
                         </thead>
                         <tbody>
-                             <?php
-                                $origin = new Origin();
-                                $data = $origin -> getOrigin();
+                            <?php
+                                $line = new ProductLine();
+                                $data = $line -> getLinesProducts();
                                 if(empty($data)){
 
                                 }else{
-                                 foreach ($data as $key) {
+                                foreach ($data as $key) {
 
                             ?>
                             <tr class="odd gradeX" align="center">
-                                <td><?php echo $key['origin_id']; ?></td>
-                                <td><?php echo $key['name_of_origin']; ?></td>
-                                <td>
-                                <i class="fa fa-pencil fa-fw"></i> <a href="?action=originEdit&id=<?php echo $key['origin_id']; ?>">Edit</a> |
-                                <i class="fa fa-trash-o  fa-fw" ></i><a onclick="return delConfirm ('Bạn có chắc muốn xóa Origin này');" href="?action=originDel&id=<?php echo $key['origin_id']; ?>"> Delete</a></td>
+                                <td><?php echo $key['line_id']; ?></td>
+                                <td><?php echo $key['line_name']; ?></td>
+                                <td><?php echo $key['compact']; ?></td>
+
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return delConfirm('Bạn có chắc muốn xóa Product line này')" href="?action=delLine&id=<?php echo $key['line_id']; ?>"> Delete</a> | <i class="fa fa-pencil fa-fw"></i> <a href="?action=editLine&id=<?php echo $key['line_id']; ?>">Edit</a></td>
                             </tr>
                             <?php } }?>
                         </tbody>

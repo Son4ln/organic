@@ -143,6 +143,7 @@
                                 </select>
 
                             </div>
+
                             <button type="submit" onclick="return validProduct();" class="btn btn-primary">Product Add</button>
                             <button type="reset" class="btn btn-default">Reset</button>
                         <form>

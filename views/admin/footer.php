@@ -36,6 +36,8 @@
             $('#append-here').append('<div class="form-group"><select class="form-control" name="prodId[]"> <option value="0">Chưa chọn sản phẩm</option> <?php $dataProducts = $product -> getProducts(); foreach ($dataProducts as $value) {?><option value="<?php echo $value['product_id']; ?>"> <?php echo $value['product_name']; ?> </option><?php } ?></select></div>');
         });
 
+        
+
     });
 
     setInterval(function(){

@@ -63,7 +63,18 @@
 
                                 <td class="center">
 
-                                    <i class="fa fa-trash-o  fa-fw"></i><a onclick="return delConfirm('Bạn có chắc muốn xóa sản phẩm này')" href="?action=productDel&id=<?php echo $value['product_id']; ?>"> Delete</a><br/><hr style="margin: 0;padding: 0"/>
+                                    <i class="fa fa-plus fa-fw"></i> <a href="?action=addProductLine&id=<?php echo $value['product_id']; ?>">Add Product Line</a>
+
+                                    <br/><hr style="margin: 0;padding: 0"/>
+
+                                    <i class="fa fa-eye fa-fw"></i> <a href="?action=viewProductLine&id=<?php echo $value['product_id']; ?>">View Product Line</a>
+
+                                    <br/><hr style="margin: 0;padding: 0"/>
+
+                                    <i class="fa fa-trash-o  fa-fw"></i><a onclick="return delConfirm('Bạn có chắc muốn xóa sản phẩm này')" href="?action=productDel&id=<?php echo $value['product_id']; ?>"> Delete</a>
+
+                                    <br/><hr style="margin: 0;padding: 0"/>
+
                                     <i class="fa fa-pencil fa-fw"></i> <a href="?action=productEdit&id=<?php echo $value['product_id']; ?>">Edit</a></td>
                             </tr>
                             <?php }} ?>

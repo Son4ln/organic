@@ -166,6 +166,7 @@
                                 </select>
 
                             </div>
+
                             <button type="submit" class="btn btn-primary">Product Edit</button>
                             <a onclick="goback()" class="btn btn-default">Cancel</a>
                         <form>

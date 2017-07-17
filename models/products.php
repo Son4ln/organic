@@ -740,6 +740,13 @@
 			$db -> exec($query);
 		}
 
+		public function getLastProductInsert (){
+			$db = new connect();
+			$query = "select product_id from  products ORDER BY product_id DESC LIMIT 1";
+			$result = $db -> getInstance($query);
+			return $result['product_id'];
+		}
+
 //END IN STOCK
 
 

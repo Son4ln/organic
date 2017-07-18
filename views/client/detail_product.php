@@ -17,20 +17,20 @@
             	<div class="col-sm-3">
             		<div class="product-images-small">
                         <div class="box-images-small" style="margin: 0;">
-                            <img class="images-small images-opacity images-hover-opacity-off zoom" id='zoom1' src="<?php echo '../controller/public/client/images/product/'.$detailPro['product_image']; ?>" style="width:50%" onclick="currentDiv(1)">
+                            <img class="images-small images-opacity images-hover-opacity-off zoom" id='zoom1' src="<?php echo '../controller/public/client/images/product/'.$detailPro['product_image']; ?>" style="width:100%" onclick="currentDiv(1)">
                         </div>
 						<?php
 							if($detailPro['product_image1'] != null){
 						?>
 							<div class="box-images-small">
-								<img class="images-smallmo images-opacity images-hover-opacity-off zoom" id='zoom1' src="<?php echo '../controller/public/client/images/product/'.$detailPro['product_image1']; ?>" style="width:50%" onclick="currentDiv(2)">
+								<img class="images-smallmo images-opacity images-hover-opacity-off zoom" id='zoom1' src="<?php echo '../controller/public/client/images/product/'.$detailPro['product_image1']; ?>" style="width:100%" onclick="currentDiv(2)">
 							</div>
 						<?php
 							}
 							if($detailPro['product_image2'] != null){
 						?>
 							<div class="box-images-small">
-								<img class="images-smallmo images-opacity images-hover-opacity-off zoom" id='zoom1' src="<?php echo '../controller/public/client/images/product/'.$detailPro['product_image2']; ?>" style="width:50%" onclick="currentDiv(3)">
+								<img class="images-smallmo images-opacity images-hover-opacity-off zoom" id='zoom1' src="<?php echo '../controller/public/client/images/product/'.$detailPro['product_image2']; ?>" style="width:100%" onclick="currentDiv(3)">
 							</div>
 						<?php
 							}

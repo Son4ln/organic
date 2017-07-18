@@ -71,6 +71,13 @@
 			$query = "delete from product_line where product_line_id ='$product_line_id'";
 			$db -> exec($query);
 		}
+		
+		function getProductLineByIdPL($product_id) {
+			$db = new connect();
+			$query = "select compact from lines_products JOIN product_line ON lines_products.line_id = product_line.line_id  where product_id = '$product_id'";
+			$result = $db -> getList($query);
+			return $result;
+		}
 		/* End ProductLine */
 	}
 ?>

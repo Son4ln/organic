@@ -65,21 +65,21 @@ if(empty($_SESSION['messages']))
 						$objContact = new contactInfo();
 						$showContact = $objContact->getContactInfo();
 					?>
-                    <p><strong><span class="alt">Vietnam Phone: </span><?php echo $showContact['vietnam_phone']; ?></strong></p>
-					<p><strong><span class="alt">Australia Phone: </span><?php echo $showContact['australia_phone']; ?></strong></p>
+                    <p><strong><span class="alt">Việt Nam: </span><?php echo $showContact['vietnam_phone']; ?></strong></p>
+					<p><strong><span class="alt">Úc: </span><?php echo $showContact['australia_phone']; ?></strong></p>
                     <p><strong><span class="alt">Fax: </span><?php echo $showContact['fax']; ?></strong></p>
                     <p><strong><span class="alt">Email: </span><?php echo $showContact['contact_email']; ?></strong></p>
                     <p><strong><span class="alt"><br>
                     <?php echo $showContact['company_name']; ?></span></strong></p>
-                    <p><strong><span class="alt">Address: </span> <?php echo $showContact['address']; ?></strong></p>
+                    <p><strong><span class="alt">Địa Chỉ: </span> <?php echo $showContact['address']; ?></strong></p>
 					<?php if(isset($showContact['headquarters'])){
 					?>
-					<p><strong><span class="alt">Headquarters: </span> <?php echo nl2br($showContact['headquarters']); ?></strong></p>
+					<p><strong><span class="alt">Trụ Sở Chính: </span> <?php echo nl2br($showContact['headquarters']); ?></strong></p>
 					<?php
 					}
 					if(isset($showContact['branch'])){
 					?>
-					<p><strong><span class="alt">Branch: </span> <?php echo nl2br($showContact['branch']); ?></strong></p>
+					<p><strong><span class="alt">Chi Nhánh: </span> <?php echo nl2br($showContact['branch']); ?></strong></p>
 					<?php
 					}
 					?>

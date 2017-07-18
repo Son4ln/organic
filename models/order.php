@@ -107,11 +107,27 @@
 			$result = $db -> getInstance($query);
 			return $result;
 		}
+		
+		//đếm số hàng sản phẩm bán chạy
+		public function getCountOrderProductL($line_id) {
+			$db = new connect();
+			$query = "select count(DISTINCT product_id) from order_details where product_id in (select products.product_id from products JOIN product_line ON products.product_id = product_line.product_id where line_id = '$line_id')";
+			$result = $db -> getInstance($query);
+			return $result;
+		}
 
 		//đếm số hàng sản phẩm bán chạy theo brand_id
 		public function getCountOrderProductB ($brand_id){
 			$db = new connect();
 			$query = "select count(DISTINCT product_id) from order_details where product_id in (select product_id from products where brand_id = '$brand_id')";
+			$result = $db -> getInstance($query);
+			return $result;
+		}
+		
+		//đếm số hàng sản phẩm bán chạy theo brand_id và line_id
+		public function getCountOrderProductBL ($brand_id, $line_id){
+			$db = new connect();
+			$query = "select count(DISTINCT product_id) from order_details where product_id in (select products.product_id from products JOIN product_line ON products.product_id = product_line.product_id where brand_id = '$brand_id' and line_id = '$line_id')";
 			$result = $db -> getInstance($query);
 			return $result;
 		}
@@ -123,11 +139,27 @@
 			$result = $db -> getInstance($query);
 			return $result;
 		}
+		
+		//đếm số hàng sản phẩm bán chạy theo feature_id và line_id
+		public function getCountOrderProductFL ($feature_id, $line_id){
+			$db = new connect();
+			$query = "select count(DISTINCT product_id) from order_details where product_id in (select products.product_id from products JOIN product_line ON products.product_id = product_line.product_id where feature_id = '$feature_id' and line_id = '$line_id')";
+			$result = $db -> getInstance($query);
+			return $result;
+		}
 
 		//đếm số hàng sản phẩm bán chạy theo origin_id
 		public function getCountOrderProductO ($origin_id){
 			$db = new connect();
 			$query = "select count(DISTINCT product_id) from order_details where product_id in (select product_id from products  where origin_id = '$origin_id')";
+			$result = $db -> getInstance($query);
+			return $result;
+		}
+		
+		//đếm số hàng sản phẩm bán chạy theo origin_id và line_id
+		public function getCountOrderProductOL($origin_id, $line_id) {
+			$db = new connect();
+			$query = "select count(DISTINCT product_id) from order_details where product_id in (select products.product_id from products JOIN product_line ON products.product_id = product_line.product_id where origin_id = '$origin_id' and line_id = '$line_id')";
 			$result = $db -> getInstance($query);
 			return $result;
 		}
@@ -148,11 +180,27 @@
 			$result = $db -> getInstance($query);
 			return $result;
 		}
+		
+		//đếm số lượng sản phẩm theo từng thương hiệu trong bảng products
+		public function countOrderBrandByIdL ($brand_id, $line_id) {
+			$db = new connect();
+			$query = "select count(products.product_id) from products JOIN product_line ON products.product_id = product_line.product_id where line_id = '$line_id' and brand_id = '$brand_id' and products.product_id in (select product_id from order_details group by product_id)";
+			$result = $db -> getInstance($query);
+			return $result;
+		}
 
 		//đếm số lượng sản phẩm theo từng tính năng trong bảng products
 		public function countOrderFeatureById ($feature_id) {
 			$db = new connect();
 			$query = "select count(product_id) from  products where feature_id = '$feature_id' and product_id in (select product_id from order_details group by product_id)";
+			$result = $db -> getInstance($query);
+			return $result;
+		}
+		
+		//đếm số lượng sản phẩm theo từng tính năng trong bảng products
+		public function countOrderFeatureByIdL ($feature_id, $line_id) {
+			$db = new connect();
+			$query = "select count(products.product_id) from products JOIN product_line ON products.product_id = product_line.product_id where line_id = '$line_id' and feature_id = '$feature_id' and products.product_id in (select product_id from order_details group by product_id)";
 			$result = $db -> getInstance($query);
 			return $result;
 		}
@@ -164,11 +212,27 @@
 			$result = $db -> getInstance($query);
 			return $result;
 		}
+		
+		//đếm số lượng sản phẩm theo từng nguồn gốc trong bảng products
+		public function countOrderOriginByIdL ($origin_id, $line_id) {
+			$db = new connect();
+			$query = "select count(products.product_id) from products JOIN product_line ON products.product_id = product_line.product_id where line_id = '$line_id' and origin_id = '$origin_id' and products.product_id in (select product_id from order_details group by product_id)";
+			$result = $db -> getInstance($query);
+			return $result;
+		}
 
 		//lấy dữ liệu sản phẩm theo từng thương hiệu trong bảng products
 		public function getOrderBrand () {
 			$db = new connect();
 			$query = "select * from  products INNER JOIN order_details ON order_details.product_id = products.product_id INNER JOIN brands ON brands.brand_id = products.brand_id group by products.brand_id";
+			$result = $db -> getList($query);
+			return $result;
+		}
+		
+		//lấy dữ liệu sản phẩm theo từng thương hiệu và line_id trong bảng products
+		public function getOrderBrandL ($line_id) {
+			$db = new connect();
+			$query = "select * from  products INNER JOIN order_details ON order_details.product_id = products.product_id INNER JOIN brands ON brands.brand_id = products.brand_id where products.product_id in (select product_id from product_line where line_id = '$line_id' group by product_id) group by products.brand_id";
 			$result = $db -> getList($query);
 			return $result;
 		}
@@ -180,11 +244,27 @@
 			$result = $db -> getList($query);
 			return $result;
 		}
+		
+		//lấy dữ liệu sản phẩm theo từng tính năng và line_id trong bảng products
+		public function getOrderFeatureL ($line_id) {
+			$db = new connect();
+			$query = "select * from  products INNER JOIN order_details ON order_details.product_id = products.product_id INNER JOIN product_features ON product_features.feature_id = products.feature_id where products.product_id in (select product_id from product_line where line_id = '$line_id' group by product_id) group by products.feature_id";
+			$result = $db -> getList($query);
+			return $result;
+		}
 
 		//lấy dữ liệu sản phẩm theo từng nguồn gốc trong bảng products
 		public function getOrderOrigin () {
 			$db = new connect();
 			$query = "select * from  products INNER JOIN order_details ON order_details.product_id = products.product_id INNER JOIN in_origin ON in_origin.origin_id = products.origin_id group by products.origin_id";
+			$result = $db -> getList($query);
+			return $result;
+		}
+		
+		//lấy dữ liệu sản phẩm theo từng nguồn gốc và line_id trong bảng products
+		public function getOrderOriginL ($line_id) {
+			$db = new connect();
+			$query = "select * from  products INNER JOIN order_details ON order_details.product_id = products.product_id INNER JOIN in_origin ON in_origin.origin_id = products.origin_id where products.product_id in (select product_id from product_line where line_id = '$line_id' group by product_id) group by products.origin_id";
 			$result = $db -> getList($query);
 			return $result;
 		}
@@ -197,11 +277,25 @@
 			$result = $db -> getList($query);
 			return $result;
 		}
+		
+		public function getProductOrderLimitL ($line_id, $from, $to){
+			$db = new connect();
+			$query = "select * from products JOIN product_line ON products.product_id = product_line.product_id where line_id = '$line_id' and products.product_id in (select product_id from order_details group by product_id) limit $from, $to";
+			$result = $db -> getList($query);
+			return $result;
+		}
 
 		//phương thức hiển thị giới hạn sản phẩm trong bảng products và order_details theo brand_id
 		public function getProductOrderLimitB ($brand_id, $from, $to){
 			$db = new connect();
 			$query = "select * from  products where brand_id = $brand_id and product_id in (select product_id from order_details group by product_id) limit $from, $to";
+			$result = $db -> getList($query);
+			return $result;
+		}
+		
+		public function getProductOrderLimitBL ($brand_id, $line_id, $from, $to){
+			$db = new connect();
+			$query = "select * from products JOIN product_line ON products.product_id = product_line.product_id where line_id = '$line_id' and brand_id = $brand_id and products.product_id in (select product_id from order_details group by product_id) limit $from, $to";
 			$result = $db -> getList($query);
 			return $result;
 		}
@@ -213,11 +307,25 @@
 			$result = $db -> getList($query);
 			return $result;
 		}
+		
+		public function getProductOrderLimitFL ($feature_id, $line_id, $from, $to){
+			$db = new connect();
+			$query = "select * from products JOIN product_line ON products.product_id = product_line.product_id where line_id = '$line_id' and feature_id = $feature_id and products.product_id in (select product_id from order_details group by product_id) limit $from, $to";
+			$result = $db -> getList($query);
+			return $result;
+		}
 
 		//phương thức hiển thị giới hạn sản phẩm trong bảng products và order_details theo origin_id
 		public function getProductOrderLimitO ($origin_id, $from, $to){
 			$db = new connect();
 			$query = "select * from  products where origin_id = $origin_id and product_id in (select product_id from order_details group by product_id) limit $from, $to";
+			$result = $db -> getList($query);
+			return $result;
+		}
+		
+		public function getProductOrderLimitOL ($origin_id, $line_id, $from, $to){
+			$db = new connect();
+			$query = "select * from products JOIN product_line ON products.product_id = product_line.product_id where line_id = '$line_id' and origin_id = $origin_id and products.product_id in (select product_id from order_details group by product_id) limit $from, $to";
 			$result = $db -> getList($query);
 			return $result;
 		}

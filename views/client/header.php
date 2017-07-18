@@ -55,18 +55,18 @@
                 <!-- /.dropdown -->
                 <li class="dropdown" style="margin-top:-5px; height: 40px;">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-						<span>Hello ! <?php echo $username; ?>  </span>
+						<span>Xin chào ! <?php echo $username; ?>  </span>
                         <img src="../controller/public/client/images/user-avatar/<?php echo $quest['avatar']; ?>" width="30px" height="30px" style="border-radius:50%;" /> <i class="fa fa-caret-down" style="color:#ea1a77"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="?action=change_data"><i class="fa fa-gear fa-fw"></i> Change Info</a>
+                        <li><a href="?action=change_data"><i class="fa fa-gear fa-fw"></i> Đổi thông tin</a>
                         </li>
-						<li><a href="?action=change_password"><i class="fa fa-gear fa-fw"></i> Change Password</a>
+						<li><a href="?action=change_password"><i class="fa fa-gear fa-fw"></i> Đổi mật khẩu</a>
                         </li>
-						<li><a href="?action=change_avatar"><i class="fa fa-gear fa-fw"></i> Change avatar</a>
+						<li><a href="?action=change_avatar"><i class="fa fa-gear fa-fw"></i> Đổi ảnh đại diện</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="?action=logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="?action=logout"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -75,7 +75,7 @@
             </ul>
         </div>
     <?php }else{
-            echo '<p style="text-align:right; margin-right: 8%;margin-top: 6px;height: 35px; margin-bottom:0;"><span><a href="?action=login">Login</a></span>  |   <span><a href="?action=register">Register</a></span></p>';
+            echo '<p style="text-align:right; margin-right: 8%;margin-top: 6px;height: 35px; margin-bottom:0;"><span><a href="?action=login">Đăng nhập</a></span>  |   <span><a href="?action=register">Đăng ký</a></span></p>';
         }
     ?>
 </div>
@@ -176,16 +176,16 @@
             </div>
             <div class="col-md-3">
                 <ul class="nav flex-right border contact right">
-                <li class="fancy-li"><span>Contact Us</span></li>
+                <li class="fancy-li"><span>Hotline</span></li>
 				<?php
 					$objContact = new contactInfo();
 					$showContact = $objContact->getContactInfo();
 				?>
                 <li>
-                    <span class="text">Vietname Phone:</span><a href=""><?php echo $showContact['vietnam_phone']; ?></a>
+                    <span class="text">Việt Nam:</span><a href=""><?php echo $showContact['vietnam_phone']; ?></a>
                 </li>
                 <li>
-                    <span class="text">Australia Phone:</span><a href=""><?php echo $showContact['australia_phone']; ?></a>
+                    <span class="text">Úc:</span><a href=""><?php echo $showContact['australia_phone']; ?></a>
                 </li>
             </ul>
             </div>
@@ -204,11 +204,11 @@
             </div>
             <div class="col-md-3">
                  <ul class="nav navbar-nav flex-right order right" style="margin-top: 15px">
-                    <div class="ribbon">
+                    <div class="ribbon"style="margin-left: 10px">
                         <a href="?action=show_cart">Order Online <i class="fa fa-shopping-cart"></i></a>
                     </div>
                 <li style="width: 100%">
-                    <p class="title1"><span>Free Delivery</span> on orders over $500</p>
+                    <p class="title1"><span>Miễn phí giao hàng</span> cho đơn hàng từ 2,000,000 trở lên</p>
                 </li>
             </ul>
             </div>

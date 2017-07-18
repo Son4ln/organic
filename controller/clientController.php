@@ -74,35 +74,44 @@
 			if(isset($_GET['origin'])){
 				$client_origin = $_GET['origin'];
 			}
-			if(isset($_GET['all'])){
-				$all = $_GET['all'];
+			if(isset($_GET['line'])){
+				$client_line = $_GET['line'];
 			}
             include '../views/client/product.php';
             break;
 		case "category":
             $action = "category";
 			$client_id = $_GET['id'];
+			if(isset($_GET['line'])){
+				$client_line = $_GET['line'];
+			}
             include '../views/client/product.php';
             break;
 		case "detailBrandCate":
             $action = "detailBrandCate";
 			$client_id = $_GET['id'];
 			$client_brand = $_GET['brand'];
-			$all = $_GET['all'];
+			if(isset($_GET['line'])){
+				$client_line = $_GET['line'];
+			}
             include '../views/client/product.php';
             break;
 		case "detailFeatureCate":
             $action = "detailFeatureCate";
 			$client_id = $_GET['id'];
 			$client_feature = $_GET['feature'];
-			$all = $_GET['all'];
+			if(isset($_GET['line'])){
+				$client_line = $_GET['line'];
+			}
             include '../views/client/product.php';
             break;
 		case "detailOriginCate":
             $action = "detailOriginCate";
 			$client_id = $_GET['id'];
 			$client_origin = $_GET['origin'];
-			$all = $_GET['all'];
+			if(isset($_GET['line'])){
+				$client_line = $_GET['line'];
+			}
             include '../views/client/product.php';
             break;
 
@@ -118,8 +127,8 @@
 			if(isset($_GET['origin'])){
 				$client_origin = $_GET['origin'];
 			}
-			if(isset($_GET['all'])){
-				$all = $_GET['all'];
+			if(isset($_GET['line'])){
+				$client_line = $_GET['line'];
 			}
             include '../views/client/product.php';
             break;

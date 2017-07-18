@@ -366,23 +366,66 @@
 					<h3 class="title3">Brands</h3>
 				</div>
 				<div class="section-content">
-					<p>We specialise in your favourite natural health staples and the latest trending products from Australia and around the world.</p>
+					<p>Với tiêu chí "vì sức khỏe cộng đồng",<br/> Organic n'All cam kết chỉ cung cấp các sản phẩm hửu cơ có chứng nhận,<br/>
+					các sản phẩm có nguồn gốc thiên nhiên an toàn<br/> với mức giá phù hợp nhất cho khách hàng.</p>
+					<?php
+					if($count_brand[0] == 1){
+						$toBrand = 1;
+						$colBrand = 12;
+					} else if($count_brand[0] == 2){
+						$toBrand = 2;
+						$colBrand = 6;
+					} else if($count_brand[0] == 3){
+						$toBrand = 3;
+						$colBrand = 4;
+					} else if($count_brand[0] == 4){
+						$toBrand = 4;
+						$colBrand = 3;
+					} else if($count_brand[0] > 4){
+						$toBrand = 3;
+						$colBrand = 4;
+					}
+					
+					?>
 					<div class="row">
 						<?php 
-							$brands = $brand->getBrandSlide(0,4);
+							$brands = $brand->getBrandSlide(0,$toBrand);
 							foreach ($brands as $set){
 						?>
-						<div class="col-sm-3 col-xs-12"><img class="aligncenter size-full wp-image-194" src="<?php echo '../controller/public/client/images/brand/'.$set['brand_image']; ?>" alt="" width="187" height="184" sizes="(max-width: 187px) 100vw, 187px"><p></p>
-							<div>
-								<p><a href="?action=product&brand=<?php echo $set['brand_id']; ?>"><?php echo $set['brand_name']; ?></a></p>
-							</div>
+						<div class="col-sm-<?php echo $colBrand; ?> col-xs-12"><img class="aligncenter size-full wp-image-194" src="<?php echo '../controller/public/client/images/brand/'.$set['brand_image']; ?>" alt="" width="137" height="134" sizes="(max-width: 137px) 100vw, 137px"><p></p>
 						</div>
 								<?php
 									}
 								?>
 							
 						  
-					</div> 
+					</div>
+					<?php
+					if($count_brand[0] > 4){
+					?>
+					<div class="row">
+						<?php 
+							$brands = $brand->getBrandSlide(3,1);
+							foreach ($brands as $set){
+						?>
+						<div class="col-sm-4 col-sm-offset-2 col-xs-12"><img class="aligncenter size-full wp-image-194" src="<?php echo '../controller/public/client/images/brand/'.$set['brand_image']; ?>" alt="" width="137" height="134" sizes="(max-width: 137px) 100vw, 137px"><p></p>
+						</div>
+								<?php
+									}
+								?>
+						<?php 
+							$brands = $brand->getBrandSlide(4,1);
+							foreach ($brands as $set){
+						?>
+						<div class="col-sm-4 col-xs-12"><img class="aligncenter size-full wp-image-194" src="<?php echo '../controller/public/client/images/brand/'.$set['brand_image']; ?>" alt="" width="137" height="134" sizes="(max-width: 137px) 100vw, 137px"><p></p>
+						</div>
+								<?php
+									}
+								?>	 
+					</div>
+					<?php
+					}
+					?>
 					<p><img class="alignnone size-full wp-image-2195 on-for-mobile-down-only brands-mobile-img" style="margin-bottom: 1em;"></p>
 				</div>
 				<span class="callout down">See our awesome range</span>

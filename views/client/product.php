@@ -62,64 +62,144 @@
 				$objOrder = new Order();
 				if($action=='product'){
 					if(isset($client_brand)){
-						$countPro = $objPro->countProductB($client_brand);
+						if(isset($client_line)){
+							$countPro = $objPro->countProductBL($client_brand, $client_line);
+						} else {
+							$countPro = $objPro->countProductB($client_brand);
+						}
 					}
 					else if(isset($client_feature)){
-						$countPro = $objPro->countProductF($client_feature);
+						if(isset($client_line)){
+							$countPro = $objPro->countProductFL($client_feature, $client_line);
+						} else {
+							$countPro = $objPro->countProductF($client_feature);
+						}
 					}
 					else if(isset($client_origin)){
-						$countPro = $objPro->countProductO($client_origin);
+						if(isset($client_line)){
+							$countPro = $objPro->countProductOL($client_origin, $client_line);
+						} else {
+							$countPro = $objPro->countProductO($client_origin);
+						}
 					}else{
-						$countPro = $objPro->countProduct();
+						if(isset($client_line)){
+							$countPro = $objPro->countProductL($client_line);
+						} else {
+							$countPro = $objPro->countProduct();
+						}
 					}
 				}else if($action=='viewAllProduct'){
 					if($client_title == 1){
 						if(isset($client_brand)){
-							$countPro = $objOrder->getCountOrderProductB($client_brand);
+							if(isset($client_line)){
+								$countPro = $objOrder->getCountOrderProductBL($client_brand, $client_line);
+							} else {
+								$countPro = $objOrder->getCountOrderProductB($client_brand);
+							}
 						}
 						else if(isset($client_feature)){
-							$countPro = $objOrder->getCountOrderProductF($client_feature);
+							if(isset($client_line)){
+								$countPro = $objOrder->getCountOrderProductFL($client_feature, $client_line);
+							} else {
+								$countPro = $objOrder->getCountOrderProductF($client_feature);
+							}
 						}
 						else if(isset($client_origin)){
-							$countPro = $objOrder->getCountOrderProductO($client_origin);
+							if(isset($client_line)){
+								$countPro = $objOrder->getCountOrderProductOL($client_origin, $client_line);
+							} else {
+								$countPro = $objOrder->getCountOrderProductO($client_origin);
+							}
 						}else{
-							$countPro = $objOrder->getCountOrderProduct();
+							if(isset($client_line)){
+								$countPro = $objOrder->getCountOrderProductL($client_line);
+							} else {
+								$countPro = $objOrder->getCountOrderProduct();
+							}
 						}
 					}else if($client_title == 2){
 						if(isset($client_brand)){
-							$countPro = $objPro->countProductB($client_brand);
+							if(isset($client_line)){
+								$countPro = $objPro->countProductBL($client_brand, $client_line);
+							} else {
+								$countPro = $objPro->countProductB($client_brand);
+							}
 						}
 						else if(isset($client_feature)){
-							$countPro = $objPro->countProductF($client_feature);
+							if(isset($client_line)){
+								$countPro = $objPro->countProductFL($client_feature, $client_line);
+							} else {
+								$countPro = $objPro->countProductF($client_feature);
+							}
 						}
 						else if(isset($client_origin)){
-							$countPro = $objPro->countProductO($client_origin);
+							if(isset($client_line)){
+								$countPro = $objPro->countProductOL($client_origin, $client_line);
+							} else {
+								$countPro = $objPro->countProductO($client_origin);
+							}
 						}else{
-							$countPro = $objPro->countProduct();
+							if(isset($client_line)){
+								$countPro = $objPro->countProductL($client_line);
+							} else {
+								$countPro = $objPro->countProduct();
+							}
 						}
 					}else if($client_title == 3){
 						if(isset($client_brand)){
-							$countPro = $objPro->countProductDiscountB($client_brand);
+							if(isset($client_line)){
+								$countPro = $objPro->countProductDiscountBL($client_brand, $client_line);
+							} else {
+								$countPro = $objPro->countProductDiscountB($client_brand);
+							}
 						}
 						else if(isset($client_feature)){
-							$countPro = $objPro->countProductDiscountF($client_feature);
+							if(isset($client_line)){
+								$countPro = $objPro->countProductDiscountFL($client_feature, $client_line);
+							} else {
+								$countPro = $objPro->countProductDiscountF($client_feature);
+							}
 						}
 						else if(isset($client_origin)){
-							$countPro = $objPro->countProductDiscountO($client_origin);
+							if(isset($client_line)){
+								$countPro = $objPro->countProductDiscountOL($client_origin, $client_line);
+							} else {
+								$countPro = $objPro->countProductDiscountO($client_origin);
+							}
 						}else{
-							$countPro = $objPro->countProductDiscount();
+							if(isset($client_line)){
+								$countPro = $objPro->countProductDiscountL($client_line);
+							} else {
+								$countPro = $objPro->countProductDiscount();
+							}
 						}
 					}else{
 						if(isset($client_brand)){
-							$countPro = $objShowTitle->countShowTitleByIdB($client_title, $client_brand);
+							if(isset($client_line)){
+								$countPro = $objShowTitle->countShowTitleByIdBL($client_title, $client_brand, $client_line);
+							} else {
+								$countPro = $objShowTitle->countShowTitleByIdB($client_title, $client_brand);
+							}
 						}
 						else if(isset($client_feature)){
-							$countPro = $objShowTitle->countShowTitleByIdF($client_title, $client_feature);
+							if(isset($client_line)){
+								$countPro = $objShowTitle->countShowTitleByIdFL($client_title, $client_feature, $client_line);
+							} else {
+								$countPro = $objShowTitle->countShowTitleByIdF($client_title, $client_feature);
+							}
 						}
 						else if(isset($client_origin)){
-							$countPro = $objShowTitle->countShowTitleByIdO($client_title, $client_origin);
+							if(isset($client_line)){
+								$countPro = $objShowTitle->countShowTitleByIdOL($client_title, $client_origin, $client_line);
+							} else {
+								$countPro = $objShowTitle->countShowTitleByIdO($client_title, $client_origin);
+							}
 						}else{
-							$countPro = $objShowTitle->countShowTitleById($client_title);
+							if(isset($client_line)){
+								$countPro = $objShowTitle->countShowTitleByIdL($client_title, $client_line);
+							} else {
+								$countPro = $objShowTitle->countShowTitleById($client_title);
+							}
 						}
 					}
 				}else{
@@ -131,79 +211,159 @@
 								$checkCate1 = $objCate->checkCategoryParentChild($reCate['category_id']);
 								if($checkCate1){
 									if($action == 'detailBrandCate'){
-										$countPro1 = $objPro->countProductCategoryArrayParentB($client_id, $client_brand);
+										if(isset($client_line)){
+											$countPro1 = $objPro->countProductCategoryArrayParentBL($client_id, $client_brand, $client_line);
+										} else {
+											$countPro1 = $objPro->countProductCategoryArrayParentB($client_id, $client_brand);
+										}
 										$countPro[0] += $countPro1[0];
 									}
 									else if($action == 'detailFeatureCate'){
-										$countPro1 = $objPro->countProductCategoryArrayParentF($client_id, $client_feature);
+										if(isset($client_line)){
+											$countPro1 = $objPro->countProductCategoryArrayParentFL($client_id, $client_feature, $client_line);
+										} else {
+											$countPro1 = $objPro->countProductCategoryArrayParentF($client_id, $client_feature);
+										}
 										$countPro[0] += $countPro1[0];
 									}
 									else if($action == 'detailOriginCate'){
-										$countPro1 = $objPro->countProductCategoryArrayParentO($client_id, $client_origin);
+										if(isset($client_line)){
+											$countPro1 = $objPro->countProductCategoryArrayParentOL($client_id, $client_origin, $client_line);
+										} else {
+											$countPro1 = $objPro->countProductCategoryArrayParentO($client_id, $client_origin);
+										}
 										$countPro[0] += $countPro1[0];
 									}else{
-										$countPro1 = $objPro->countProductCategoryArrayParent($client_id);
+										if(isset($client_line)){
+											$countPro1 = $objPro->countProductCategoryArrayParentL($client_id, $client_line);
+										} else {
+											$countPro1 = $objPro->countProductCategoryArrayParent($client_id);
+										}
 										$countPro[0] += $countPro1[0];
 									}
 								}else{
 									if($action == 'detailBrandCate'){
-										$countPro1 = $objPro->countProductCategoryArrayB($client_id, $client_brand);
+										if(isset($client_line)){
+											$countPro1 = $objPro->countProductCategoryArrayBL($client_id, $client_brand, $client_line);
+										} else {
+											$countPro1 = $objPro->countProductCategoryArrayB($client_id, $client_brand);
+										}
 										$countPro[0] += $countPro1[0];
 									}
 									else if($action == 'detailFeatureCate'){
-										$countPro1 = $objPro->countProductCategoryArrayF($client_id, $client_feature);
+										if(isset($client_line)){
+											$countPro1 = $objPro->countProductCategoryArrayFL($client_id, $client_feature, $client_line);
+										} else {
+											$countPro1 = $objPro->countProductCategoryArrayF($client_id, $client_feature);
+										}
 										$countPro[0] += $countPro1[0];
 									}
 									else if($action == 'detailOriginCate'){
-										$countPro1 = $objPro->countProductCategoryArrayO($client_id, $client_origin);
+										if(isset($client_line)){
+											$countPro1 = $objPro->countProductCategoryArrayOL($client_id, $client_origin, $client_line);
+										} else {
+											$countPro1 = $objPro->countProductCategoryArrayO($client_id, $client_origin);
+										}
 										$countPro[0] += $countPro1[0];
 									}else{
-										$countPro1 = $objPro->countProductCategoryArray($client_id);
+										if(isset($client_line)){
+											$countPro1 = $objPro->countProductCategoryArrayL($client_id, $client_line);
+										} else {
+											$countPro1 = $objPro->countProductCategoryArray($client_id);
+										}
 										$countPro[0] += $countPro1[0];
 									}
 								}
 						}else{
 							if($action == 'detailBrandCate'){
-								$countPro = $objPro->countProductCategoryB($client_id, $client_brand);
+								if(isset($client_line)){
+									$countPro = $objPro->countProductCategoryBL($client_id, $client_brand, $client_line);
+								} else {
+									$countPro = $objPro->countProductCategoryB($client_id, $client_brand);
+								}
 							}
 							else if($action == 'detailFeatureCate'){
-								$countPro = $objPro->countProductCategoryF($client_id, $client_feature);
+								if(isset($client_line)){
+									$countPro = $objPro->countProductCategoryFL($client_id, $client_feature, $client_line);
+								} else {
+									$countPro = $objPro->countProductCategoryF($client_id, $client_feature);
+								}
 							}
 							else if($action == 'detailOriginCate'){
-								$countPro = $objPro->countProductCategoryO($client_id, $client_origin);
+								if(isset($client_line)){
+									$countPro = $objPro->countProductCategoryOL($client_id, $client_origin, $client_line);
+								} else {
+									$countPro = $objPro->countProductCategoryO($client_id, $client_origin);
+								}
 							}else{
-								$countPro = $objPro->countProductCategory($client_id);
+								if(isset($client_line)){
+									$countPro = $objPro->countProductCategoryL($client_id, $client_line);
+								} else {
+									$countPro = $objPro->countProductCategory($client_id);
+								}
 							}
 						}
 					}else{
 						$checkCate = $objCate->checkCategoryParentChild($client_id);
 						if($checkCate){
 							if($action == 'detailBrandCate'){
-								$countPro1 = $objPro->countProductCategoryArrayB($client_id, $client_brand);
+								if(isset($client_line)){
+									$countPro1 = $objPro->countProductCategoryArrayBL($client_id, $client_brand, $client_line);
+								} else {
+									$countPro1 = $objPro->countProductCategoryArrayB($client_id, $client_brand);
+								}
 								$countPro[0] += $countPro1[0];
 							}
 							else if($action == 'detailFeatureCate'){
-								$countPro1 = $objPro->countProductCategoryArrayF($client_id, $client_feature);
+								if(isset($client_line)){
+									$countPro1 = $objPro->countProductCategoryArrayFL($client_id, $client_feature, $client_line);
+								} else {
+									$countPro1 = $objPro->countProductCategoryArrayF($client_id, $client_feature);
+								}
 								$countPro[0] += $countPro1[0];
 							}
 							else if($action == 'detailOriginCate'){
-								$countPro1 = $objPro->countProductCategoryArrayO($client_id, $client_origin);
+								if(isset($client_line)){
+									$countPro1 = $objPro->countProductCategoryArrayOL($client_id, $client_origin, $client_line);
+								} else {
+									$countPro1 = $objPro->countProductCategoryArrayO($client_id, $client_origin);
+								}
 								$countPro[0] += $countPro1[0];
 							}else{
-								$countPro1 = $objPro->countProductCategoryArray($client_id);
+								if(isset($client_line)){
+									$countPro1 = $objPro->countProductCategoryArrayL($client_id, $client_line);
+								} else {
+									$countPro1 = $objPro->countProductCategoryArray($client_id);
+								}
 								$countPro[0] += $countPro1[0];
 							}
 						}else{
 							if($action == 'detailBrandCate'){
-								$countPro = $objPro->countProductCategoryB($client_id, $client_brand);
+								if(isset($client_line)){
+									$countPro = $objPro->countProductCategoryBL($client_id, $client_brand, $client_line);
+								} else {
+									$countPro = $objPro->countProductCategoryB($client_id, $client_brand);
+								}
 							}
 							else if($action == 'detailFeatureCate'){
-								$countPro = $objPro->countProductCategoryF($client_id, $client_feature);
+								if(isset($client_line)){
+									$countPro = $objPro->countProductCategoryFL($client_id, $client_feature, $client_line);
+								} else {
+									$countPro = $objPro->countProductCategoryF($client_id, $client_feature);
+								}
 							}
 							else if($action == 'detailOriginCate'){
-								$countPro = $objPro->countProductCategoryO($client_id, $client_origin);
+								if(isset($client_line)){
+									$countPro = $objPro->countProductCategoryOL($client_id, $client_origin, $client_line);
+								} else {
+									$countPro = $objPro->countProductCategoryO($client_id, $client_origin);
+								}
 							}else{
-								$countPro = $objPro->countProductCategory($client_id);
+								if(isset($client_line)){
+									$countPro = $objPro->countProductCategoryL($client_id, $client_line);
+								} else {
+									$countPro = $objPro->countProductCategory($client_id);
+								}
 							}
 						}
 					}
@@ -221,6 +381,46 @@
 				}
 				// Tìm Start
 				$start = ($current_page - 1) * $limit;
+				
+				$all[0] = 0;
+				if($action == 'product'){
+					$all =  $objPro->countProduct();
+				}else if($action == 'viewAllProduct'){ 
+					if($client_title == 1){
+						$all = $objOrder->getCountOrderProduct();
+					}else if($client_title == 2){
+						$all = $objPro->countProduct();
+					}else if($client_title == 3){
+						$all = $objPro->countProductDiscount();
+					}else{
+						$all = $objShowTitle->countShowTitleById($client_title);
+					}
+				}else{ 
+					if($showCate['parent_id'] == 0){
+						$checkCate = $objCate->checkCategoryParentChild($client_id);
+						if($checkCate){
+							$reCate = $objCate->getCategoryByParentId($client_id);
+							$checkCate1 = $objCate->checkCategoryParentChild($reCate['category_id']);
+							if($checkCate1){
+								$all1 = $objPro->countProductCategoryArrayParent($client_id);
+								$all[0] += $all1[0];
+							} else{
+								$all1 = $objPro->countProductCategoryArray($client_id);
+								$all[0] += $all1[0];
+							}
+						}else{
+							$all = $objPro->countProductCategory($client_id);
+						}
+					}else{
+						$checkCate = $objCate->checkCategoryParentChild($client_id);
+						if($checkCate){
+							$all1 = $objPro->countProductCategoryArray($client_id);
+							$all[0] += $all1[0];
+						}else{
+							$countPro = $objPro->countProductCategory($client_id);
+						}
+					}
+				}
 			?>
 			
         <div class="row">
@@ -229,65 +429,176 @@
                     <h4 class="lower">Brands</h4>
                         <ul class="underline">
 							<li><a href="?action=<?php
-								if($action == 'product'){
-									echo $action;
-								}else if($action == 'viewAllProduct'){ 
-									echo 'viewAllProduct&id='.$client_title;
-								}else{ 
-									echo 'category&id='.$client_id;
-								} ?>">Show all brands (<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>)
+									if($action == 'product'){
+										echo $action;
+									}else if($action == 'viewAllProduct'){ 
+										echo 'viewAllProduct&id='.$client_title;
+									}else{ 
+										echo 'category&id='.$client_id;
+									}?>">Show all Brands (<?php echo $all[0]; ?>)
 							</a></li>
 							<?php
+								$objBrand = new Brands();
 								if($action=='product'){
-										$showBrand = $objPro->getProductBrand();
-										foreach($showBrand as $brand){
-										$countBrand = $objPro->countProductBrandById($brand['brand_id'] );
+									if(isset($client_brand)) {
+										$brand = $objBrand->getBrandById($client_brand);
+										if(isset($client_line)){
+												$countBrand = $objPro->countProductBrandByIdL($brand['brand_id'], $client_line);
+											} else {
+												$countBrand = $objPro->countProductBrandById($brand['brand_id']);
+											}
 									?>
-										<li><a href="?action=product&brand=<?php echo $brand['brand_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-											<?php echo $brand['brand_name']." (".$countBrand[0].")"; ?></a>
+										<li><a href="?action=product&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+											<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
+										</li>
+									<?php
+									} else {
+										if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+											$showBrand = $objPro->getProductBrandL($client_line);
+										} else {
+											$showBrand = $objPro->getProductBrand();
+										}
+										foreach($showBrand as $brand){
+											if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+												$countBrand = $objPro->countProductBrandByIdL($brand['brand_id'], $client_line);
+											} else {
+												$countBrand = $objPro->countProductBrandById($brand['brand_id']);
+											}
+									?>
+										<li><a href="?action=product&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+											<?php if($countBrand[0] >0) {echo $brand['brand_name']." (".$countBrand[0].")";}?></a>
 										</li>
 									<?php
 										}
+									}
 								}else if($action=='viewAllProduct'){
 									if($client_title == 1){
-										$showBrand = $objOrder->getOrderBrand();
-										foreach($showBrand as $brand){
-											$countBrand = $objOrder->countOrderBrandById($brand['brand_id'] );
+										if(isset($client_brand)) {
+											$brand = $objBrand->getBrandById($client_brand);
+											if(isset($client_line)){
+													$countBrand = $objOrder->countOrderBrandByIdL($brand['brand_id'], $client_line);
+												} else {
+													$countBrand = $objOrder->countOrderBrandById($brand['brand_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-												<?php echo $brand['brand_name']." (".$countBrand[0].")"; ?></a>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+												$showBrand = $objOrder->getOrderBrandL($client_line);
+											} else {
+												$showBrand = $objOrder->getOrderBrand();
+											}
+											foreach($showBrand as $brand){
+												if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+													$countBrand = $objOrder->countOrderBrandByIdL($brand['brand_id'], $client_line);
+												} else {
+													$countBrand = $objOrder->countOrderBrandById($brand['brand_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countBrand[0] >0) {echo $brand['brand_name']." (".$countBrand[0].")";}?></a>
+											</li>
+										<?php
+											}
 										}
 									}else if($client_title == 2){
-										$showBrand = $objPro->getProductBrand();
-										foreach($showBrand as $brand){
-											$countBrand = $objPro->countProductBrandById($brand['brand_id'] );
+										if(isset($client_brand)) {
+											$brand = $objBrand->getBrandById($client_brand);
+											if(isset($client_line)){
+													$countBrand = $objPro->countProductBrandByIdL($brand['brand_id'], $client_line);
+												} else {
+													$countBrand = $objPro->countProductBrandById($brand['brand_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-												<?php echo $brand['brand_name']." (".$countBrand[0].")"; ?></a>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+												$showBrand = $objPro->getProductBrandL($client_line);
+											} else {
+												$showBrand = $objPro->getProductBrand();
+											}
+											foreach($showBrand as $brand){
+												if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+													$countBrand = $objPro->countProductBrandByIdL($brand['brand_id'], $client_line);
+												} else {
+													$countBrand = $objPro->countProductBrandById($brand['brand_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countBrand[0] >0) {echo $brand['brand_name']." (".$countBrand[0].")";}?></a>
+											</li>
+										<?php
+											}
 										}
 									}else if($client_title == 3){
-										$showBrand = $objPro->getProductDiscountBrand();
-										foreach($showBrand as $brand){
-											$countBrand = $objPro->countProductDiscountB($brand['brand_id'] );
+										if(isset($client_brand)) {
+											$brand = $objBrand->getBrandById($client_brand);
+											if(isset($client_line)){
+													$countBrand = $objPro->countProductDiscountBL($brand['brand_id'], $client_line);
+												} else {
+													$countBrand = $objPro->countProductDiscountB($brand['brand_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-												<?php echo $brand['brand_name']." (".$countBrand[0].")"; ?></a>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+												$showBrand = $objPro->getProductDiscountBrandL($client_line);
+											} else {
+												$showBrand = $objPro->getProductDiscountBrand();
+											}
+											foreach($showBrand as $brand){
+												if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+													$countBrand = $objPro->countProductDiscountBL($brand['brand_id'], $client_line);
+												} else {
+													$countBrand = $objPro->countProductDiscountB($brand['brand_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countBrand[0] >0) {echo $brand['brand_name']." (".$countBrand[0].")";}?></a>
+											</li>
+										<?php
+											}
 										}
 									}else{
-										$showBrand = $objShowTitle->getProductShowTitleBrand($client_title);
-										foreach($showBrand as $brand){
-											$countBrand = $objShowTitle->countProductShowTitleBrandById($client_title, $brand['brand_id'] );
+										if(isset($client_brand)) {
+											$brand = $objBrand->getBrandById($client_brand);
+											if(isset($client_line)){
+													$countBrand = $objShowTitle->countProductShowTitleBrandByIdL($client_title, $brand['brand_id'], $client_line);
+												} else {
+													$countBrand = $objShowTitle->countProductShowTitleBrandById($client_title, $brand['brand_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-												<?php echo $brand['brand_name']." (".$countBrand[0].")"; ?></a>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+												$showBrand = $objShowTitle->getProductShowTitleBrandL($client_title, $client_line);
+											} else {
+												$showBrand = $objShowTitle->getProductShowTitleBrand($client_title);
+											}
+											foreach($showBrand as $brand){
+												if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+													$countBrand = $objShowTitle->countProductShowTitleBrandByIdL($client_title, $brand['brand_id'], $client_line);
+												} else {
+													$countBrand = $objShowTitle->countProductShowTitleBrandById($client_title, $brand['brand_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countBrand[0] >0) {echo $brand['brand_name']." (".$countBrand[0].")";}?></a>
+											</li>
+										<?php
+											}
 										}
 									}
 								}else{
@@ -297,59 +608,169 @@
 											$reCate = $objCate->getCategoryByParentId($client_id);
 											$checkCate1 = $objCate->checkCategoryParentChild($reCate['category_id']);
 											if($checkCate1){
-												$showBrand = $objPro->getProductCategoryBrandArrayParent($client_id);
-												foreach($showBrand as $brand){
-													$countBrand = $objPro->countProductCategoryBrandByIdArrayParent($client_id,$brand['brand_id'] );
+												if(isset($client_brand)) {
+													$brand = $objBrand->getBrandById($client_brand);
+													if(isset($client_line)){
+															$countBrand = $objPro->countProductCategoryBrandByIdArrayParentL($client_id,$brand['brand_id'], $client_line);
+														} else {
+															$countBrand = $objPro->countProductCategoryBrandByIdArrayParent($client_id,$brand['brand_id']);
+														}
 												?>
-													<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-														<?php echo $brand['brand_name']." (".$countBrand[0].")"; ?>
-													</a></li>
+													<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+														<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
+													</li>
 												<?php
+												} else {
+													if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+														$showBrand = $objPro->getProductCategoryBrandArrayParentL($client_id, $client_line);
+													} else {
+														$showBrand = $objPro->getProductCategoryBrandArrayParent($client_id);
+													}
+													foreach($showBrand as $brand){
+														if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+															$countBrand = $objPro->countProductCategoryBrandByIdArrayParentL($client_id,$brand['brand_id'], $client_line);
+														} else {
+															$countBrand = $objPro->countProductCategoryBrandByIdArrayParent($client_id,$brand['brand_id']);
+														}
+												?>
+													<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+														<?php if($countBrand[0] >0) {echo $brand['brand_name']." (".$countBrand[0].")";}?></a>
+													</li>
+												<?php
+													}
 												}
 											}else{
-												$showBrand = $objPro->getProductCategoryBrandArray($client_id);
-												foreach($showBrand as $brand){
-													$countBrand = $objPro->countProductCategoryBrandByIdArray($client_id,$brand['brand_id'] );
+												if(isset($client_brand)) {
+													$brand = $objBrand->getBrandById($client_brand);
+													if(isset($client_line)){
+															$countBrand = $objPro->countProductCategoryBrandByIdArrayL($client_id,$brand['brand_id'], $client_line);
+														} else {
+															$countBrand = $objPro->countProductCategoryBrandByIdArray($client_id,$brand['brand_id']);
+														}
 												?>
-													<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-														<?php echo $brand['brand_name']." (".$countBrand[0].")"; ?>
-													</a></li>
+													<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+														<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
+													</li>
 												<?php
+												} else {
+													if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+														$showBrand = $objPro->getProductCategoryBrandArrayL($client_id, $client_line);
+													} else {
+														$showBrand = $objPro->getProductCategoryBrandArray($client_id);
+													}
+													foreach($showBrand as $brand){
+														if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+															$countBrand = $objPro->countProductCategoryBrandByIdArrayL($client_id,$brand['brand_id'], $client_line);
+														} else {
+															$countBrand = $objPro->countProductCategoryBrandByIdArray($client_id,$brand['brand_id']);
+														}
+												?>
+													<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+														<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
+													</li>
+												<?php
+													}
 												}
 											}
 											
 										}else{
-												$showBrand = $objPro->getProductCategoryBrand($client_id);
-											foreach($showBrand as $brand){
-												$countBrand = $objPro->countProductCategoryBrandById($client_id,$brand['brand_id']);
+											if(isset($client_brand)) {
+												$brand = $objBrand->getBrandById($client_brand);
+												if(isset($client_line)){
+														$countBrand = $objPro->countProductCategoryBrandByIdL($client_id,$brand['brand_id'], $client_line);
+													} else {
+														$countBrand = $objPro->countProductCategoryBrandById($client_id,$brand['brand_id']);
+													}
 											?>
-												<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-													<?php echo $brand['brand_name']." (".$countBrand[0].")"; ?>
-												</a></li>
+												<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
+												</li>
 											<?php
+											} else {
+												if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+													$showBrand = $objPro->getProductCategoryBrandL($client_id, $client_line);
+												} else {
+													$showBrand = $objPro->getProductCategoryBrand($client_id);
+												}
+												foreach($showBrand as $brand){
+													if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+														$countBrand = $objPro->countProductCategoryBrandByIdL($client_id, $brand['brand_id'], $client_line);
+													} else {
+														$countBrand = $objPro->countProductCategoryBrandById($client_id, $brand['brand_id']);
+													}
+											?>
+												<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php if($countBrand[0] >0) {echo $brand['brand_name']." (".$countBrand[0].")";}?></a>
+												</li>
+											<?php
+												}
 											}
 										}
 									}else{
 										$checkCate = $objCate->checkCategoryParentChild($client_id);
 										if($checkCate){
-											$showBrand = $objPro->getProductCategoryBrandArray($client_id);
-											foreach($showBrand as $brand){
-												$countBrand = $objPro->countProductCategoryBrandByIdArray($client_id,$brand['brand_id'] );
+											if(isset($client_brand)) {
+												$brand = $objBrand->getBrandById($client_brand);
+												if(isset($client_line)){
+														$countBrand = $objPro->countProductCategoryBrandByIdArrayL($client_id,$brand['brand_id'], $client_line);
+													} else {
+														$countBrand = $objPro->countProductCategoryBrandByIdArray($client_id,$brand['brand_id']);
+													}
 											?>
-												<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-													<?php echo $brand['brand_name']." (".$countBrand[0].")"; ?>
-												</a></li>
+												<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
+												</li>
 											<?php
+											} else {
+												if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+													$showBrand = $objPro->getProductCategoryBrandArrayL($client_id, $client_line);
+												} else {
+													$showBrand = $objPro->getProductCategoryBrandArray($client_id);
+												}
+												foreach($showBrand as $brand){
+													if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+														$countBrand = $objPro->countProductCategoryBrandByIdArrayL($client_id,$brand['brand_id'], $client_line);
+													} else {
+														$countBrand = $objPro->countProductCategoryBrandByIdArray($client_id,$brand['brand_id']);
+													}
+											?>
+												<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php if($countBrand[0] >0) {echo $brand['brand_name']." (".$countBrand[0].")";}?></a>
+												</li>
+											<?php
+												}
 											}
 										}else{
-											$showBrand = $objPro->getProductCategoryBrand($client_id);
-											foreach($showBrand as $brand){
-												$countBrand = $objPro->countProductCategoryBrandById($client_id,$brand['brand_id'] );
-										?>
-											<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-												<?php echo $brand['brand_name']." (".$countBrand[0].")"; ?>
-											</a></li>
-										<?php
+											if(isset($client_brand)) {
+												$brand = $objBrand->getBrandById($client_brand);
+												if(isset($client_line)){
+														$countBrand = $objPro->countProductCategoryBrandByIdL($client_id,$brand['brand_id'], $client_line);
+													} else {
+														$countBrand = $objPro->countProductCategoryBrandById($client_id,$brand['brand_id']);
+													}
+											?>
+												<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php echo $brand['brand_name']." (".$countBrand[0].")";?></a>
+												</li>
+											<?php
+											} else {
+												if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+													$showBrand = $objPro->getProductCategoryBrandL($client_id, $client_line);
+												} else {
+													$showBrand = $objPro->getProductCategoryBrand($client_id);
+												}
+												foreach($showBrand as $brand){
+													if(isset($client_line) && !isset($client_feature) && !isset($client_origin)){
+														$countBrand = $objPro->countProductCategoryBrandByIdL($client_id,$brand['brand_id'], $client_line);
+													} else {
+														$countBrand = $objPro->countProductCategoryBrandById($client_id,$brand['brand_id']);
+													}
+											?>
+												<li><a href="?action=detailBrandCate&id=<?php echo $client_id;?>&brand=<?php echo $brand['brand_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php if($countBrand[0] >0) {echo $brand['brand_name']." (".$countBrand[0].")";}?></a>
+												</li>
+											<?php
+												}
 											}
 										}
 									}
@@ -359,65 +780,175 @@
                         <ul class="underline">
 							<li><a href="?action=<?php
 								if($action == 'product'){
-									echo $action;
-								}else if($action == 'viewAllProduct'){ 
-									echo 'viewAllProduct&id='.$client_title;
-								}else{ 
-									echo 'category&id='.$client_id;
-								} ?>">
-								Show all Features (<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>)
+										echo $action;
+									}else if($action == 'viewAllProduct'){ 
+										echo 'viewAllProduct&id='.$client_title;
+									}else{ 
+										echo 'category&id='.$client_id;
+									}?>">Show all Features (<?php echo $all[0]; ?>)
 							</a></li>
 							<?php
+							$objFeature = new Features();
 								if($action=='product'){
-										$showFeature = $objPro->getProductFeature();
-										foreach($showFeature as $feature){
-										$countFeature = $objPro->countProductFeatureById($feature['feature_id'] );
+									if(isset($client_feature)) {
+										$feature = $objFeature->getFeatureById($client_feature);
+										if(isset($client_line)){
+												$countFeature = $objPro->countProductFeatureByIdL($feature['feature_id'], $client_line);
+											} else {
+												$countFeature = $objPro->countProductFeatureById($feature['feature_id']);
+											}
 									?>
-										<li><a href="?action=product&feature=<?php echo $feature['feature_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-											<?php echo $feature['feature_name']." (".$countFeature[0].")"; ?></a>
+										<li><a href="?action=product&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+											<?php echo $feature['feature_name']." (".$countFeature[0].")";?></a>
+										</li>
+									<?php
+									} else {
+										if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+											$showFeature = $objPro->getProductFeatureL($client_line);
+										} else {
+											$showFeature = $objPro->getProductFeature();
+										}
+										foreach($showFeature as $feature){
+											if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+												$countFeature = $objPro->countProductFeatureByIdL($feature['feature_id'], $client_line);
+											} else {
+												$countFeature = $objPro->countProductFeatureById($feature['feature_id']);
+											}
+									?>
+										<li><a href="?action=product&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+											<?php if($countFeature[0] >0) {echo $feature['feature_name']." (".$countFeature[0].")";}?></a>
 										</li>
 									<?php
 										}
+									}
 								}else if($action=='viewAllProduct'){
 									if($client_title == 1){
-										$showFeature = $objOrder->getOrderFeature();
-										foreach($showFeature as $feature){
-											$countFeature = $objOrder->countOrderFeatureById($feature['feature_id'] );
+										if(isset($client_feature)) {
+											$feature = $objFeature->getFeatureById($client_feature);
+											if(isset($client_line)){
+													$countFeature = $objOrder->countOrderFeatureByIdL($feature['feature_id'], $client_line);
+												} else {
+													$countFeature = $objOrder->countOrderFeatureById($feature['feature_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-												<?php echo $feature['feature_name']." (".$countFeature[0].")"; ?></a>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php echo $feature['feature_name']." (".$countFeature[0].")";?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+												$showFeature = $objOrder->getOrderFeatureL($client_line);
+											} else {
+												$showFeature = $objOrder->getOrderFeature();
+											}
+											foreach($showFeature as $feature){
+												if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+													$countFeature = $objOrder->countOrderFeatureByIdL($feature['feature_id'], $client_line);
+												} else {
+													$countFeature = $objOrder->countOrderFeatureById($feature['feature_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php if($countFeature[0] >0) {echo $feature['feature_name']." (".$countFeature[0].")";}?></a>
+											</li>
+										<?php
+											}
 										}
 									}else if($client_title == 2){
-										$showFeature = $objPro->getProductFeature();
-										foreach($showFeature as $feature){
-											$countFeature = $objPro->countProductFeatureById($feature['feature_id'] );
+										if(isset($client_feature)) {
+											$feature = $objFeature->getFeatureById($client_feature);
+											if(isset($client_line)){
+													$countFeature = $objPro->countProductFeatureByIdL($feature['feature_id'], $client_line);
+												} else {
+													$countFeature = $objPro->countProductFeatureById($feature['feature_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-												<?php echo $feature['feature_name']." (".$countFeature[0].")"; ?></a>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php echo $feature['feature_name']." (".$countFeature[0].")";?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+												$showFeature = $objPro->getProductFeatureL($client_line);
+											} else {
+												$showFeature = $objPro->getProductFeature();
+											}
+											foreach($showFeature as $feature){
+												if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+													$countFeature = $objPro->countProductFeatureByIdL($feature['feature_id'], $client_line);
+												} else {
+													$countFeature = $objPro->countProductFeatureById($feature['feature_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countFeature[0] >0) {echo $feature['feature_name']." (".$countFeature[0].")";}?></a>
+											</li>
+										<?php
+											}
 										}
 									}else if($client_title == 3){
-										$showFeature = $objPro->getProductDiscountFeature();
-										foreach($showFeature as $feature){
-											$countFeature = $objPro->countProductDiscountF($feature['feature_id'] );
+										if(isset($client_feature)) {
+											$feature = $objFeature->getFeatureById($client_feature);
+											if(isset($client_line)){
+													$countFeature = $objPro->countProductDiscountFL($feature['feature_id'], $client_line);
+												} else {
+													$countFeature = $objPro->countProductDiscountF($feature['feature_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-												<?php echo $feature['feature_name']." (".$countFeature[0].")"; ?></a>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php echo $feature['feature_name']." (".$countFeature[0].")";?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+												$showFeature = $objPro->getProductDiscountFeatureL($client_line);
+											} else {
+												$showFeature = $objPro->getProductFeature();
+											}
+											foreach($showFeature as $feature){
+												if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+													$countFeature = $objPro->countProductDiscountFL($feature['feature_id'], $client_line);
+												} else {
+													$countFeature = $objPro->countProductDiscountF($feature['feature_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countFeature[0] >0) {echo $feature['feature_name']." (".$countFeature[0].")";}?></a>
+											</li>
+										<?php
+											}
 										}
 									}else{
-										$showFeature = $objShowTitle->getProductShowTitleFeature($client_title);
-										foreach($showFeature as $feature){
-											$countFeature = $objShowTitle->countProductShowTitleFeatureById($client_title, $feature['feature_id'] );
+										if(isset($client_feature)) {
+											$feature = $objFeature->getFeatureById($client_feature);
+											if(isset($client_line)){
+												$countFeature = $objShowTitle->countProductShowTitleFeatureByIdL($client_title, $feature['feature_id'], $client_line);
+											} else {
+												$countFeature = $objShowTitle->countProductShowTitleFeatureById($client_title, $feature['feature_id']);
+											}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-												<?php echo $feature['feature_name']." (".$countFeature[0].")"; ?></a>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php echo $feature['feature_name']." (".$countFeature[0].")";?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+												$showFeature = $objShowTitle->getProductShowTitleFeatureL($client_title, $client_line);
+											} else {
+												$showFeature = $objShowTitle->getProductShowTitleFeature($client_title);
+											}
+											foreach($showFeature as $feature){
+												if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+													$countFeature = $objShowTitle->countProductShowTitleFeatureByIdL($client_title, $feature['feature_id'], $client_line);
+												} else {
+													$countFeature = $objShowTitle->countProductShowTitleFeatureById($client_title, $feature['feature_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countFeature[0] >0) {echo $feature['feature_name']." (".$countFeature[0].")";}?></a>
+											</li>
+										<?php
+											}
 										}
 									}
 								}else{
@@ -427,58 +958,168 @@
 											$reCate = $objCate->getCategoryByParentId($client_id);
 											$checkCate1 = $objCate->checkCategoryParentChild($reCate['category_id']);
 											if($checkCate1){
-												$showFeature = $objPro->getProductCategoryFeatureArrayParent($client_id);
-												foreach($showFeature as $feature){
-													$countFeature = $objPro->countProductCategoryFeatureByIdArrayParent($client_id,$feature['feature_id'] );
+												if(isset($client_feature)) {
+													$feature = $objFeature->getFeatureById($client_feature);
+														if(isset($client_line)){
+															$countFeature = $objPro->countProductCategoryFeatureByIdArrayParentL($client_id, $feature['feature_id'], $client_line);
+														} else {
+															$countFeature = $objPro->countProductCategoryFeatureByIdArrayParent($client_id, $feature['feature_id']);
+														}
 												?>
-													<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-														<?php echo $feature['feature_name']." (".$countFeature[0].")"; ?></a>
+													<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+														<?php echo $feature['feature_name']." (".$countFeature[0].")";?></a>
 													</li>
 												<?php
+												} else {
+													if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+														$showFeature = $objPro->getProductCategoryFeatureArrayParentL($client_id, $client_line);
+													} else {
+														$showFeature = $objPro->getProductCategoryFeatureArrayParent($client_id);
+													}
+													foreach($showFeature as $feature){
+														if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+															$countFeature = $objPro->countProductCategoryFeatureByIdArrayParentL($client_id, $feature['feature_id'], $client_line);
+														} else {
+															$countFeature = $objPro->countProductCategoryFeatureByIdArrayParent($client_id, $feature['feature_id']);
+														}
+												?>
+													<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+														<?php if($countFeature[0] >0) {echo $feature['feature_name']." (".$countFeature[0].")";}?></a>
+													</li>
+												<?php
+													}
 												}
 											}else{
-												$showFeature = $objPro->getProductCategoryFeatureArray($client_id);
-												foreach($showFeature as $feature){
-													$countFeature = $objPro->countProductCategoryFeatureByIdArray($client_id,$feature['feature_id'] );
+												if(isset($client_feature)) {
+													$feature = $objFeature->getFeatureById($client_feature);
+														if(isset($client_line)){
+															$countFeature = $objPro->countProductCategoryFeatureByIdArrayL($client_id, $feature['feature_id'], $client_line);
+														} else {
+															$countFeature = $objPro->countProductCategoryFeatureByIdArray($client_id, $feature['feature_id']);
+														}
 												?>
-													<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-														<?php echo $feature['feature_name']." (".$countFeature[0].")"; ?></a>
-												</li>
-													<?php
+													<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+														<?php echo $feature['feature_name']." (".$countFeature[0].")";?></a>
+													</li>
+												<?php
+												} else {
+													if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+														$showFeature = $objPro->getProductCategoryFeatureArrayL($client_id, $client_line);
+													} else {
+														$showFeature = $objPro->getProductCategoryFeatureArray($client_id);
+													}
+													foreach($showFeature as $feature){
+														if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+															$countFeature = $objPro->countProductCategoryFeatureByIdArrayL($client_id, $feature['feature_id'], $client_line);
+														} else {
+															$countFeature = $objPro->countProductCategoryFeatureByIdArray($client_id, $feature['feature_id']);
+														}
+												?>
+													<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+														<?php if($countFeature[0] >0) {echo $feature['feature_name']." (".$countFeature[0].")";}?></a>
+													</li>
+												<?php
+													}
 												}
 											}
 										}else{
-											$showFeature = $objPro->getProductCategoryFeature($client_id);
-											foreach($showFeature as $feature){
-												$countFeature = $objPro->countProductCategoryFeatureById($client_id,$feature['feature_id'] );
+											if(isset($client_feature)) {
+												$feature = $objFeature->getFeatureById($client_feature);
+													if(isset($client_line)){
+														$countFeature = $objPro->countProductCategoryFeatureByIdL($client_id, $feature['feature_id'], $client_line);
+													} else {
+														$countFeature = $objPro->countProductCategoryFeatureById($client_id, $feature['feature_id']);
+													}
 											?>
-												<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-													<?php echo $feature['feature_name']." (".$countFeature[0].")"; ?></a>
+												<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php echo $feature['feature_name']." (".$countFeature[0].")";?></a>
 												</li>
 											<?php
+											} else {
+												if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+													$showFeature = $objPro->getProductCategoryFeatureL($client_id, $client_line);
+												} else {
+													$showFeature = $objPro->getProductCategoryFeature($client_id);
+												}
+												foreach($showFeature as $feature){
+													if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+														$countFeature = $objPro->countProductCategoryFeatureByIdL($client_id, $feature['feature_id'], $client_line);
+													} else {
+														$countFeature = $objPro->countProductCategoryFeatureById($client_id, $feature['feature_id']);
+													}
+											?>
+												<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php if($countFeature[0] >0) {echo $feature['feature_name']." (".$countFeature[0].")";}?></a>
+												</li>
+											<?php
+												}
 											}
 										}
 									}else{
 										$checkCate = $objCate->checkCategoryParentChild($client_id);
 										if($checkCate){
-											$showFeature = $objPro->getProductCategoryFeatureArray($client_id);
-											foreach($showFeature as $feature){
-												$countFeature = $objPro->countProductCategoryFeatureByIdArray($client_id,$feature['feature_id'] );
+											if(isset($client_feature)) {
+												$feature = $objFeature->getFeatureById($client_feature);
+													if(isset($client_line)){
+														$countFeature = $objPro->countProductCategoryFeatureByIdArrayL($client_id, $feature['feature_id'], $client_line);
+													} else {
+														$countFeature = $objPro->countProductCategoryFeatureByIdArray($client_id, $feature['feature_id']);
+													}
 											?>
-												<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-													<?php echo $feature['feature_name']." (".$countFeature[0].")"; ?></a>
+												<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php echo $feature['feature_name']." (".$countFeature[0].")";?></a>
 												</li>
 											<?php
+											} else {
+												if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+													$showFeature = $objPro->getProductCategoryFeatureArrayL($client_id, $client_line);
+												} else {
+													$showFeature = $objPro->getProductCategoryFeatureArray($client_id);
+												}
+												foreach($showFeature as $feature){
+													if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+														$countFeature = $objPro->countProductCategoryFeatureByIdArrayL($client_id, $feature['feature_id'], $client_line);
+													} else {
+														$countFeature = $objPro->countProductCategoryFeatureByIdArray($client_id, $feature['feature_id']);
+													}
+											?>
+												<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php if($countFeature[0] >0) {echo $feature['feature_name']." (".$countFeature[0].")";}?></a>
+												</li>
+											<?php
+												}
 											}
 										}else{
-											$showFeature = $objPro->getProductCategoryFeature($client_id);
-											foreach($showFeature as $feature){
-											$countFeature = $objPro->countProductCategoryFeatureById($client_id,$feature['feature_id'] );
-										?>
-											<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
-												<?php echo $feature['feature_name']." (".$countFeature[0].")"; ?></a>
-											</li>
-										<?php
+											if(isset($client_feature)) {
+												$feature = $objFeature->getFeatureById($client_feature);
+													if(isset($client_line)){
+														$countFeature = $objPro->countProductCategoryFeatureByIdL($client_id, $feature['feature_id'], $client_line);
+													} else {
+														$countFeature = $objPro->countProductCategoryFeatureById($client_id, $feature['feature_id']);
+													}
+											?>
+												<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php echo $feature['feature_name']." (".$countFeature[0].")";?></a>
+												</li>
+											<?php
+											} else {
+												if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+													$showFeature = $objPro->getProductCategoryFeatureL($client_id, $client_line);
+												} else {
+													$showFeature = $objPro->getProductCategoryFeature($client_id);
+												}
+												foreach($showFeature as $feature){
+													if(isset($client_line) && !isset($client_brand) && !isset($client_origin)){
+														$countFeature = $objPro->countProductCategoryFeatureByIdL($client_id, $feature['feature_id'], $client_line);
+													} else {
+														$countFeature = $objPro->countProductCategoryFeatureById($client_id, $feature['feature_id']);
+													}
+											?>
+												<li><a href="?action=detailFeatureCate&id=<?php echo $client_id;?>&feature=<?php echo $feature['feature_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php if($countFeature[0] >0) {echo $feature['feature_name']." (".$countFeature[0].")";}?></a>
+												</li>
+											<?php
+												}
 											}
 										}
 									}
@@ -488,65 +1129,175 @@
                         <ul>                          
                             <li><a href="?action=<?php
 								if($action == 'product'){
-									echo $action;
-								}else if($action == 'viewAllProduct'){ 
-									echo 'viewAllProduct&id='.$client_title;
-								}else{ 
-									echo 'category&id='.$client_id;
-								} ?>">
-								Show all In Origin (<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>)
+										echo $action;
+									}else if($action == 'viewAllProduct'){ 
+										echo 'viewAllProduct&id='.$client_title;
+									}else{ 
+										echo 'category&id='.$client_id;
+									}?>">Show all In Origin (<?php echo $all[0]; ?>)
 							</a></li>
                             <?php
+							$objOrigin = new Origin();
 								if($action=='product'){
-										$showOrigin = $objPro->getProductOrigin();
-										foreach($showOrigin as $origin){
-											$countOrigin = $objPro->countProductOriginById($origin['origin_id'] );
+									if(isset($client_origin)) {
+										$origin = $objOrigin->getOriginShowById($client_origin);
+											if(isset($client_line)){
+												$countOrigin = $objPro->countProductOriginByIdL($origin['origin_id'], $client_line);
+											} else {
+												$countOrigin = $objPro->countProductOriginById($origin['origin_id']);
+											}
 									?>
-										<li><a href="?action=product&origin=<?php echo $origin['origin_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
+										<li><a href="?action=product&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
 											<?php echo $origin['name_of_origin']." (".$countOrigin[0].")"; ?></a>
 										</li>
 									<?php
+									} else {
+										if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+											$showOrigin = $objPro->getProductOriginL($client_line);
+										} else {
+											$showOrigin = $objPro->getProductOrigin();
 										}
+										foreach($showOrigin as $origin){
+											if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+												$countOrigin = $objPro->countProductOriginByIdL($origin['origin_id'], $client_line);
+											} else {
+												$countOrigin = $objPro->countProductOriginById($origin['origin_id']);
+											}
+									?>
+										<li><a href="?action=product&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+											<?php if($countOrigin[0] >0) { echo $origin['name_of_origin']." (".$countOrigin[0].")";} ?></a>
+										</li>
+									<?php
+										}
+									}
 								}else if($action=='viewAllProduct'){
 									if($client_title == 1){
-										$showOrigin = $objOrder->getOrderOrigin();
-										foreach($showOrigin as $origin){
-											$countOrigin = $objOrder->countOrderOriginById($origin['origin_id'] );
+										if(isset($client_origin)) {
+											$origin = $objOrigin->getOriginShowById($client_origin);
+												if(isset($client_line)){
+													$countOrigin = $objOrder->countOrderOriginByIdL($origin['origin_id'], $client_line);
+												} else {
+													$countOrigin = $objOrder->countOrderOriginById($origin['origin_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
 												<?php echo $origin['name_of_origin']." (".$countOrigin[0].")"; ?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+												$showOrigin = $objOrder->getOrderOriginL($client_line);
+											} else {
+												$showOrigin = $objOrder->getOrderOrigin();
+											}
+											foreach($showOrigin as $origin){
+												if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+													$countOrigin = $objOrder->countOrderOriginByIdL($origin['origin_id'], $client_line);
+												} else {
+													$countOrigin = $objOrder->countOrderOriginById($origin['origin_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countOrigin[0] >0) { echo $origin['name_of_origin']." (".$countOrigin[0].")";} ?></a>
+											</li>
+										<?php
+											}
 										}
 									}else if($client_title == 2){
-										$showOrigin = $objPro->getProductOrigin();
-										foreach($showOrigin as $origin){
-											$countOrigin = $objPro->countProductOriginById($origin['origin_id'] );
+										if(isset($client_origin)) {
+											$origin = $objOrigin->getOriginShowById($client_origin);
+												if(isset($client_line)){
+													$countOrigin = $objPro->countProductOriginByIdL($origin['origin_id'], $client_line);
+												} else {
+													$countOrigin = $objPro->countProductOriginById($origin['origin_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
 												<?php echo $origin['name_of_origin']." (".$countOrigin[0].")"; ?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+												$showOrigin = $objPro->getProductOriginL($client_line);
+											} else {
+												$showOrigin = $objPro->getProductOrigin();
+											}
+											foreach($showOrigin as $origin){
+												if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+													$countOrigin = $objPro->countProductOriginByIdL($origin['origin_id'], $client_line);
+												} else {
+													$countOrigin = $objPro->countProductOriginById($origin['origin_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countOrigin[0] >0) { echo $origin['name_of_origin']." (".$countOrigin[0].")";} ?></a>
+											</li>
+										<?php
+											}
 										}
 									}else if($client_title == 3){
-										$showOrigin = $objPro->getProductDiscountOrigin();
-										foreach($showOrigin as $origin){
-											$countOrigin = $objPro->countProductDiscountO($origin['origin_id'] );
+										if(isset($client_origin)) {
+											$origin = $objOrigin->getOriginShowById($client_origin);
+												if(isset($client_line)){
+													$countOrigin = $objPro->countProductDiscountOL($origin['origin_id'], $client_line);
+												} else {
+													$countOrigin = $objPro->countProductDiscountO($origin['origin_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
 												<?php echo $origin['name_of_origin']." (".$countOrigin[0].")"; ?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+												$showOrigin = $objPro->getProductDiscountOriginL($client_line);
+											} else {
+												$showOrigin = $objPro->getProductDiscountOrigin();
+											}
+											foreach($showOrigin as $origin){
+												if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+													$countOrigin = $objPro->countProductDiscountOL($origin['origin_id'], $client_line);
+												} else {
+													$countOrigin = $objPro->countProductDiscountO($origin['origin_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countOrigin[0] >0) { echo $origin['name_of_origin']." (".$countOrigin[0].")";} ?></a>
+											</li>
+										<?php
+											}
 										}
 									}else{
-										$showOrigin = $objShowTitle->getProductShowTitleOrigin($client_title);
-										foreach($showOrigin as $origin){
-											$countOrigin = $objShowTitle->countProductShowTitleOriginById($client_title, $origin['origin_id'] );
+										if(isset($client_origin)) {
+											$origin = $objOrigin->getOriginShowById($client_origin);
+												if(isset($client_line)){
+													$countOrigin = $objShowTitle->countProductShowTitleOriginByIdL($client_title, $origin['origin_id'], $client_line);
+												} else {
+													$countOrigin = $objShowTitle->countProductShowTitleOriginById($client_title, $origin['origin_id']);
+												}
 										?>
-											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
 												<?php echo $origin['name_of_origin']." (".$countOrigin[0].")"; ?></a>
 											</li>
 										<?php
+										} else {
+											if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+												$showOrigin = $objShowTitle->getProductShowTitleOriginL($client_title, $client_line);
+											} else {
+												$showOrigin = $objShowTitle->getProductShowTitleOrigin($client_title);
+											}
+											foreach($showOrigin as $origin){
+												if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+													$countOrigin = $objShowTitle->countProductShowTitleOriginByIdL($client_title, $origin['origin_id'], $client_line);
+												} else {
+													$countOrigin = $objShowTitle->countProductShowTitleOriginById($client_title, $origin['origin_id']);
+												}
+										?>
+											<li><a href="?action=viewAllProduct&id=<?php echo $client_title;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countOrigin[0] >0) { echo $origin['name_of_origin']." (".$countOrigin[0].")";} ?></a>
+											</li>
+										<?php
+											}
 										}
 									}
 								}else{
@@ -557,58 +1308,168 @@
 											$reCate = $objCate->getCategoryByParentId($client_id);
 											$checkCate1 = $objCate->checkCategoryParentChild($reCate['category_id']);
 											if($checkCate1){
-												$showOrigin = $objPro->getProductCategoryOriginArrayParent($client_id);
-												foreach($showOrigin as $origin){
-													$countOrigin = $objPro->countProductCategoryOriginByIdArrayParent($client_id,$origin['origin_id'] );
+												if(isset($client_origin)) {
+													$origin = $objOrigin->getOriginShowById($client_origin);
+														if(isset($client_line)){
+															$countOrigin = $objPro->countProductCategoryOriginByIdArrayParentL($client_id, $origin['origin_id'], $client_line);
+														} else {
+															$countOrigin = $objPro->countProductCategoryOriginByIdArrayParent($client_id, $origin['origin_id']);
+														}
 												?>
-													<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
+													<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
 														<?php echo $origin['name_of_origin']." (".$countOrigin[0].")"; ?></a>
 													</li>
-													<?php
+												<?php
+												} else {
+													if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+														$showOrigin = $objPro->getProductCategoryOriginArrayParentL($client_id, $client_line);
+													} else {
+														$showOrigin = $objPro->getProductCategoryOriginArrayParent($client_id);
+													}
+													foreach($showOrigin as $origin){
+														if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+															$countOrigin = $objPro->countProductCategoryOriginByIdArrayParentL($client_id, $origin['origin_id'], $client_line);
+														} else {
+															$countOrigin = $objPro->countProductCategoryOriginByIdArrayParent($client_id, $origin['origin_id']);
+														}
+												?>
+													<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+														<?php if($countOrigin[0] >0) { echo $origin['name_of_origin']." (".$countOrigin[0].")";} ?></a>
+													</li>
+												<?php
+													}
 												}
 											}else{
-												$showOrigin = $objPro->getProductCategoryOriginArray($client_id);
-												foreach($showOrigin as $origin){
-													$countOrigin = $objPro->countProductCategoryOriginByIdArray($client_id,$origin['origin_id'] );
+												if(isset($client_origin)) {
+													$origin = $objOrigin->getOriginShowById($client_origin);
+														if(isset($client_line)){
+															$countOrigin = $objPro->countProductCategoryOriginByIdArrayL($client_id, $origin['origin_id'], $client_line);
+														} else {
+															$countOrigin = $objPro->countProductCategoryOriginByIdArray($client_id, $origin['origin_id']);
+														}
 												?>
-													<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
+													<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
 														<?php echo $origin['name_of_origin']." (".$countOrigin[0].")"; ?></a>
 													</li>
-													<?php
+												<?php
+												} else {
+													if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+														$showOrigin = $objPro->getProductCategoryOriginArrayL($client_id, $client_line);
+													} else {
+														$showOrigin = $objPro->getProductCategoryOriginArray($client_id);
+													}
+													foreach($showOrigin as $origin){
+														if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+															$countOrigin = $objPro->countProductCategoryOriginByIdArrayL($client_id, $origin['origin_id'], $client_line);
+														} else {
+															$countOrigin = $objPro->countProductCategoryOriginByIdArray($client_id, $origin['origin_id']);
+														}
+												?>
+													<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+														<?php if($countOrigin[0] >0) { echo $origin['name_of_origin']." (".$countOrigin[0].")";} ?></a>
+													</li>
+												<?php
+													}
 												}
 											}
 										}else{
-												$showOrigin = $objPro->getProductCategoryOrigin($client_id);
-											foreach($showOrigin as $origin){
-												$countOrigin = $objPro->countProductCategoryOriginById($client_id,$origin['origin_id'] );
+											if(isset($client_origin)) {
+												$origin = $objOrigin->getOriginShowById($client_origin);
+													if(isset($client_line)){
+														$countOrigin = $objPro->countProductCategoryOriginByIdL($client_id, $origin['origin_id'], $client_line);
+													} else {
+														$countOrigin = $objPro->countProductCategoryOriginById($client_id, $origin['origin_id']);
+													}
 											?>
-												<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
+												<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
 													<?php echo $origin['name_of_origin']." (".$countOrigin[0].")"; ?></a>
 												</li>
 											<?php
+											} else {
+												if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+													$showOrigin = $objPro->getProductCategoryOriginL($client_id, $client_line);
+												} else {
+													$showOrigin = $objPro->getProductCategoryOrigin($client_id);
+												}
+												foreach($showOrigin as $origin){
+													if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+														$countOrigin = $objPro->countProductCategoryOriginByIdL($client_id, $origin['origin_id'], $client_line);
+													} else {
+														$countOrigin = $objPro->countProductCategoryOriginById($client_id, $origin['origin_id']);
+													}
+											?>
+												<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php if($countOrigin[0] >0) { echo $origin['name_of_origin']." (".$countOrigin[0].")";} ?></a>
+												</li>
+											<?php
+												}
 											}
 										}
 									}else{
 										$checkCate = $objCate->checkCategoryParentChild($client_id);
 										if($checkCate){
-											$showOrigin = $objPro->getProductCategoryOriginArray($client_id);
-											foreach($showOrigin as $origin){
-												$countOrigin = $objPro->countProductCategoryOriginByIdArray($client_id,$origin['origin_id'] );
+											if(isset($client_origin)) {
+												$origin = $objOrigin->getOriginShowById($client_origin);
+													if(isset($client_line)){
+														$countOrigin = $objPro->countProductCategoryOriginByIdArrayL($client_id, $origin['origin_id'], $client_line);
+													} else {
+														$countOrigin = $objPro->countProductCategoryOriginByIdArray($client_id, $origin['origin_id']);
+													}
 											?>
-												<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
+												<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
 													<?php echo $origin['name_of_origin']." (".$countOrigin[0].")"; ?></a>
 												</li>
-												<?php
+											<?php
+											} else {
+												if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+													$showOrigin = $objPro->getProductCategoryOriginArrayL($client_id, $client_line);
+												} else {
+													$showOrigin = $objPro->getProductCategoryOriginArray($client_id);
+												}
+												foreach($showOrigin as $origin){
+													if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+														$countOrigin = $objPro->countProductCategoryOriginByIdArrayL($client_id, $origin['origin_id'], $client_line);
+													} else {
+														$countOrigin = $objPro->countProductCategoryOriginByIdArray($client_id, $origin['origin_id']);
+													}
+											?>
+												<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+													<?php if($countOrigin[0] >0) { echo $origin['name_of_origin']." (".$countOrigin[0].")";} ?></a>
+												</li>
+											<?php
+												}
 											}
 										}else{
-											$showOrigin = $objPro->getProductCategoryOrigin($client_id);
-											foreach($showOrigin as $origin){
-											$countOrigin = $objPro->countProductCategoryOriginById($client_id,$origin['origin_id'] );
-										?>
-											<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];?>&all=<?php if(isset($all)){ echo $all; }else{ echo $countPro[0];}?>">
+											if(isset($client_origin)) {
+												$origin = $objOrigin->getOriginShowById($client_origin);
+													if(isset($client_line)){
+														$countOrigin = $objPro->countProductCategoryOriginByIdL($client_id, $origin['origin_id'], $client_line);
+													} else {
+														$countOrigin = $objPro->countProductCategoryOriginById($client_id, $origin['origin_id']);
+													}
+											?>
+												<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
 												<?php echo $origin['name_of_origin']." (".$countOrigin[0].")"; ?></a>
-											</li>
-										<?php
+												</li>
+											<?php
+											} else {
+												if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+													$showOrigin = $objPro->getProductCategoryOriginL($client_id, $client_line);
+												} else {
+													$showOrigin = $objPro->getProductCategoryOrigin($client_id);
+												}
+												foreach($showOrigin as $origin){
+													if(isset($client_line) && !isset($client_brand) && !isset($client_feature)){
+														$countOrigin = $objPro->countProductCategoryOriginByIdL($client_id, $origin['origin_id'], $client_line);
+													} else {
+														$countOrigin = $objPro->countProductCategoryOriginById($client_id, $origin['origin_id']);
+													}
+											?>
+												<li><a href="?action=detailOriginCate&id=<?php echo $client_id;?>&origin=<?php echo $origin['origin_id'];if(isset($client_line)){ echo '&line='.$client_line;}?>">
+												<?php if($countOrigin[0] >0) { echo $origin['name_of_origin']." (".$countOrigin[0].")";} ?></a>
+												</li>
+											<?php
+												}
 											}
 										}
 									}
@@ -625,6 +1486,7 @@
 									$objBrand = new Brands();
 									$objFeature = new Features();
 									$objOrigin = new Origin();
+									$objProductLine = new ProductLine();
 									
 									if($action=='product'){
 										echo 'Tất cả sản phẩm';
@@ -645,6 +1507,10 @@
 											$nameOrigin = $objOrigin->getOriginShowById($client_origin);
 											echo ' - Nguồn gốc: '.$nameOrigin['name_of_origin'];
 										}
+										if(isset($client_line)){
+											$nameLine = $objProductLine->getLinesProductsById($client_line);
+											echo ' - Thuộc loại: '.$nameLine['line_name'];
+										}
 								?></span></span> 
 							<span class="right"><span>Showing </span>
 							<?php if($countPro[0]>=8){ echo ($start+1).' - '.($start+$limit)?> <span>of </span><?php echo $countPro[0]; ?></span>
@@ -654,29 +1520,51 @@
 						<div id="prod-list">
 							<div class="prod-row">
 								<div class="row">
+									<?php
+									$objProductLine = new ProductLine();
+									?>
 									<div class="col-md-4 col-sm-6 col-xs-12">
-										<label><input type="checkbox" value=""> <div class="bg-icon">VA</div> View All</label>
+										<label><a href="?action=<?php echo $action; if(isset($client_id)){ echo '&id='.$client_id;}
+												if(isset($client_title)){
+												?>&id=<?php echo $client_title;	
+												} if(isset($client_brand)){
+												?>&brand=<?php echo $client_brand;
+												} else if(isset($client_feature)){
+												?>&feature=<?php echo $client_feature;
+												} else if(isset($client_origin)){
+												?>&origin=<?php echo $client_origin;
+												}
+												?>"><input type="checkbox"<?php if(!isset($client_line) || $client_line == 0){ echo 'checked';}?>> 
+												<div class="bg-icon">VA</div> View All
+											</a>
+										</label>
 									</div>
-									
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<label><input type="checkbox" value=""> <div class="bg-icon">CO</div> Certified Organic</label>
-									</div>
-									
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<label><input type="checkbox" value=""> <div class="bg-icon">OI</div> Organic Ingredients</label>
-									</div>
-									
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<label><input type="checkbox" value=""> <span class="bg-icon">VF</span> Vegan Friendly</label>
-									</div>
-									
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<label><input type="checkbox" value=""> <span class="bg-icon">N</span> Natural</label>
-									</div>
-									
-									<div class="col-md-4 col-sm-6 col-xs-12">
-										<label><input type="checkbox" value=""> <span class="bg-icon">V</span> Vegan</label>
-									</div>
+									<?php
+									$showLinePro = $objProductLine->getLinesProducts();
+									foreach($showLinePro as $line_pro){
+									?>
+										<div class="col-md-4 col-sm-6 col-xs-12">
+											<label>
+												<a href="?action=<?php echo $action; if(isset($client_id)){ echo '&id='.$client_id;}
+													if(isset($client_brand)){
+													?>&brand=<?php echo $client_brand;
+													} else if(isset($client_feature)){
+													?>&feature=<?php echo $client_feature;
+													} else if(isset($client_origin)){
+													?>&origin=<?php echo $client_origin;
+													} if(isset($client_title)){
+													?>&id=<?php echo $client_title;	
+													}
+													?>&line=<?php echo $line_pro['line_id']?>">
+													<input type="checkbox" value="<?php echo $line_pro['line_name'];?>" 
+													<?php if(isset($client_line) && $client_line == $line_pro['line_id']){ echo 'checked';}?>> 
+													<div class="bg-icon"><?php echo $line_pro['compact'];?></div> <?php echo $line_pro['line_name'];?>
+												</a>
+											</label>
+										</div>
+									<?php
+									}
+									?>
 								</div>
 								<?php
 									if( $countPro[0]==0){
@@ -684,64 +1572,144 @@
 									} else{
 										if($action=='product'){
 											if(isset($client_brand)){
-												$showPro = $objPro->getProductLimitB($client_brand, $start, $limit);
+												if(isset($client_line)){
+													$showPro = $objPro->getProductLimitBL($client_brand, $client_line, $start, $limit);
+												} else {
+													$showPro = $objPro->getProductLimitB($client_brand, $start, $limit);
+												}
 											}
 											else if(isset($client_feature)){
-												$showPro = $objPro->getProductLimitF($client_feature, $start, $limit);
+												if(isset($client_line)){
+													$showPro = $objPro->getProductLimitFL($client_feature, $client_line, $start, $limit);
+												} else {
+													$showPro = $objPro->getProductLimitF($client_feature, $start, $limit);
+												}
 											}
 											else if(isset($client_origin)){
-												$showPro = $objPro->getProductLimitO($client_origin, $start, $limit);
+												if(isset($client_line)){
+													$showPro = $objPro->getProductLimitOL($client_origin, $client_line, $start, $limit);
+												} else {
+													$showPro = $objPro->getProductLimitO($client_origin, $start, $limit);
+												}
 											}else{
-												$showPro = $objPro->getProductLimit($start, $limit);
+												if(isset($client_line)){
+													$showPro = $objPro->getProductLimitL($client_line, $start, $limit);
+												} else {
+													$showPro = $objPro->getProductLimit($start, $limit);
+												}
 											}
 										}else if($action == 'viewAllProduct'){
 											if($client_title == 1){
 												if(isset($client_brand)){
-													$showPro = $objOrder->getProductOrderLimitB($client_brand, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objOrder->getProductOrderLimitBL($client_brand, $client_line, $start, $limit);
+													} else {
+														$showPro = $objOrder->getProductOrderLimitB($client_brand, $start, $limit);
+													}
 												}
 												else if(isset($client_feature)){
-													$showPro = $objOrder->getProductOrderLimitF($client_feature, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objOrder->getProductOrderLimitFL($client_feature, $client_line, $start, $limit);
+													} else {
+														$showPro = $objOrder->getProductOrderLimitF($client_feature, $start, $limit);
+													}
 												}
 												else if(isset($client_origin)){
-													$showPro = $objOrder->getProductOrderLimitO($client_origin, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objOrder->getProductOrderLimitOL($client_origin, $client_line, $start, $limit);
+													} else {
+														$showPro = $objOrder->getProductOrderLimitO($client_origin, $start, $limit);
+													}
 												}else{
-													$showPro = $objOrder->getProductOrderLimit($start, $limit);
+													if(isset($client_line)){
+														$showPro = $objOrder->getProductOrderLimitL($client_line, $start, $limit);
+													} else {
+														$showPro = $objOrder->getProductOrderLimit($start, $limit);
+													}
 												}
 											}else if($client_title == 2){
 												if(isset($client_brand)){
-													$showPro = $objPro->getProductNewB($client_brand, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objPro->getProductNewBL($client_brand, $client_line, $start, $limit);
+													} else {
+														$showPro = $objPro->getProductNewB($client_brand, $start, $limit);
+													}
 												}
 												else if(isset($client_feature)){
-													$showPro = $objPro->getProductNewF($client_feature, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objPro->getProductNewFL($client_feature, $client_line, $start, $limit);
+													} else {
+														$showPro = $objPro->getProductNewF($client_feature, $start, $limit);
+													}
 												}
 												else if(isset($client_origin)){
-													$showPro = $objPro->getProductNewO($client_origin, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objPro->getProductNewOL($client_origin, $client_line, $start, $limit);
+													} else {
+														$showPro = $objPro->getProductNewO($client_origin, $start, $limit);
+													}
 												}else{
-													$showPro = $objPro->getProductNew($start, $limit);
+													if(isset($client_line)){
+														$showPro = $objPro->getProductNewL($client_line, $start, $limit);
+													} else {
+														$showPro = $objPro->getProductNew($start, $limit);
+													}
 												}
 											}else if($client_title == 3){
 												if(isset($client_brand)){
-													$showPro = $objPro->getProductDiscountB($client_brand, $start, $limit);;
+													if(isset($client_line)){
+														$showPro = $objPro->getProductDiscountBL($client_brand, $client_line, $start, $limit);
+													} else {
+														$showPro = $objPro->getProductDiscountB($client_brand, $start, $limit);
+													}
 												}
 												else if(isset($client_feature)){
-													$showPro = $objPro->getProductDiscountF($client_feature, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objPro->getProductDiscountFL($client_feature, $client_line, $start, $limit);
+													} else {
+														$showPro = $objPro->getProductDiscountF($client_feature, $start, $limit);
+													}
 												}
 												else if(isset($client_origin)){
-													$showPro = $objPro->getProductDiscountO($client_origin, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objPro->getProductDiscountOL($client_origin, $client_line, $start, $limit);
+													} else {
+														$showPro = $objPro->getProductDiscountO($client_origin, $start, $limit);
+													}
 												}else{
-													$showPro = $objPro->getProductDiscount($start, $limit);
+													if(isset($client_line)){
+														$showPro = $objPro->getProductDiscountL($client_line, $start, $limit);
+													} else {
+														$showPro = $objPro->getProductDiscount($start, $limit);
+													}
 												}
 											}else{
 												if(isset($client_brand)){
-													$showPro = $objShowTitle->getProductShowTitleLimitB($client_title, $client_brand, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objShowTitle->getProductShowTitleLimitBL($client_title, $client_brand, $client_line, $start, $limit);
+													} else {
+														$showPro = $objShowTitle->getProductShowTitleLimitB($client_title, $client_brand, $start, $limit);
+													}
 												}
 												else if(isset($client_feature)){
-													$showPro = $objShowTitle->getProductShowTitleLimitF($client_title, $client_feature, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objShowTitle->getProductShowTitleLimitFL($client_title, $client_feature, $client_line, $start, $limit);
+													} else {
+														$showPro = $objShowTitle->getProductShowTitleLimitF($client_title, $client_feature, $start, $limit);
+													}
 												}
 												else if(isset($client_origin)){
-													$showPro = $objShowTitle->getProductShowTitleLimitO($client_title, $client_origin, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objShowTitle->getProductShowTitleLimitOL($client_title, $client_origin, $client_line, $start, $limit);
+													} else {
+														$showPro = $objShowTitle->getProductShowTitleLimitO($client_title, $client_origin, $start, $limit);
+													}
 												}else{
-													$showPro = $objShowTitle->getProductShowTitleLimit($client_title, $start, $limit);
+													if(isset($client_line)){
+														$showPro = $objShowTitle->getProductShowTitleLimitL($client_title, $client_line, $start, $limit);
+													} else {
+														$showPro = $objShowTitle->getProductShowTitleLimit($client_title, $start, $limit);
+													}
 												}
 											}
 										}else{
@@ -752,61 +1720,141 @@
 													$checkCate1 = $objCate->checkCategoryParentChild($reCate['category_id']);
 													if($checkCate1){
 														if($action == 'detailBrandCate'){
-															$showPro = $objPro->getProductCategoryLimitArrayParentB($client_id, $client_brand, $start, $limit);
+															if(isset($client_line)){
+																$showPro = $objPro->getProductCategoryLimitArrayParentBL($client_id, $client_brand, $client_line, $start, $limit);
+															} else {
+																$showPro = $objPro->getProductCategoryLimitArrayParentB($client_id, $client_brand, $start, $limit);
+															}
 														}else if($action == 'detailFeatureCate'){
-															$showPro = $objPro->getProductCategoryLimitArrayParentF($client_id, $client_feature, $start, $limit);
+															if(isset($client_line)){
+																$showPro = $objPro->getProductCategoryLimitArrayParentFL($client_id, $client_feature, $client_line, $start, $limit);
+															} else {
+																$showPro = $objPro->getProductCategoryLimitArrayParentF($client_id, $client_feature, $start, $limit);
+															}
 														}else if($action == 'detailOriginCate'){
-															$showPro = $objPro->getProductCategoryLimitArrayParentO($client_id, $client_origin, $start, $limit);
+															if(isset($client_line)){
+																$showPro = $objPro->getProductCategoryLimitArrayParentOL($client_id, $client_origin, $client_line, $start, $limit);
+															} else {
+																$showPro = $objPro->getProductCategoryLimitArrayParentO($client_id, $client_origin, $client_line, $start, $limit);
+															}
 														}else{
-															$showPro = $objPro->getProductCategoryLimitArrayParent($client_id, $start, $limit);
+															if(isset($client_line)){
+																$showPro = $objPro->getProductCategoryLimitArrayParentL($client_id, $client_line, $start, $limit);
+															} else {
+																$showPro = $objPro->getProductCategoryLimitArrayParent($client_id, $start, $limit);
+															}
 														}
 													}else{
 														if($action == 'detailBrandCate'){
-															$showPro = $objPro->getProductCategoryLimitArrayB($client_id, $client_brand, $start, $limit);
+															if(isset($client_line)){
+																$showPro = $objPro->getProductCategoryLimitArrayBL($client_id, $client_brand, $client_line, $start, $limit);
+															} else {
+																$showPro = $objPro->getProductCategoryLimitArrayB($client_id, $client_brand, $start, $limit);
+															}
 														}else if($action == 'detailFeatureCate'){
-															$showPro = $objPro->getProductCategoryLimitArrayF($client_id, $client_feature, $start, $limit);
+															if(isset($client_line)){
+																$showPro = $objPro->getProductCategoryLimitArrayFL($client_id, $client_feature, $client_line, $start, $limit);
+															} else {
+																$showPro = $objPro->getProductCategoryLimitArrayF($client_id, $client_feature, $start, $limit);
+															}
 														}else if($action == 'detailOriginCate'){
-															$showPro = $objPro->getProductCategoryLimitArrayO($client_id, $client_origin, $start, $limit);
+															if(isset($client_line)){
+																$showPro = $objPro->getProductCategoryLimitArrayOL($client_id, $client_origin, $client_line, $start, $limit);
+															} else {
+																$showPro = $objPro->getProductCategoryLimitArrayO($client_id, $client_origin, $client_line, $start, $limit);
+															}
 														}else{
-															$showPro = $objPro->getProductCategoryLimitArray($client_id, $start, $limit);
+															if(isset($client_line)){
+																$showPro = $objPro->getProductCategoryLimitArrayL($client_id, $client_line, $start, $limit);
+															} else {
+																$showPro = $objPro->getProductCategoryLimitArray($client_id, $start, $limit);
+															}
 														}
 													}
 												}else{
 													if($action == 'detailBrandCate'){
-														$showPro = $objPro->getProductCategoryLimitB($client_id, $client_brand, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitBL($client_id, $client_brand, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimitB($client_id, $client_brand, $start, $limit);
+														}
 													}
 													else if($action == 'detailFeatureCate'){
-														$showPro = $objPro->getProductCategoryLimitF($client_id, $client_feature, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitFL($client_id, $client_feature, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimitF($client_id, $client_feature, $start, $limit);
+														}
 													}
 													else if($action == 'detailOriginCate'){
-														$showPro = $objPro->getProductCategoryLimitO($client_id, $client_origin, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitOL($client_id, $client_origin, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimitO($client_id, $client_origin, $start, $limit);
+														}
 													}else{
-														$showPro = $objPro->getProductCategoryLimit($client_id, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitL($client_id, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimit($client_id, $start, $limit);
+														}
 													}
 												}
 											}else{
 												$checkCate = $objCate->checkCategoryParentChild($client_id);
 												if($checkCate){
 													if($action == 'detailBrandCate'){
-														$showPro = $objPro->getProductCategoryLimitArrayB($client_id, $client_brand, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitArrayBL($client_id, $client_brand, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimitArrayB($client_id, $client_brand, $start, $limit);
+														}
 													}else if($action == 'detailFeatureCate'){
-														$showPro = $objPro->getProductCategoryLimitArrayF($client_id, $client_feature, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitArrayFL($client_id, $client_feature, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimitArrayF($client_id, $client_feature, $start, $limit);
+														}
 													}else if($action == 'detailOriginCate'){
-														$showPro = $objPro->getProductCategoryLimitArrayO($client_id, $client_origin, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitArrayOL($client_id, $client_origin, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimitArrayO($client_id, $client_origin, $client_line, $start, $limit);
+														}
 													}else{
-														$showPro = $objPro->getProductCategoryLimitArray($client_id, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitArrayL($client_id, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimitArray($client_id, $start, $limit);
+														}
 													}
 												}else{
 													if($action == 'detailBrandCate'){
-														$showPro = $objPro->getProductCategoryLimitB($client_id, $client_brand, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitBL($client_id, $client_brand, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimitB($client_id, $client_brand, $start, $limit);
+														}
 													}
 													else if($action == 'detailFeatureCate'){
-														$showPro = $objPro->getProductCategoryLimitF($client_id, $client_feature, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitFL($client_id, $client_feature, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimitF($client_id, $client_feature, $start, $limit);
+														}
 													}
 													else if($action == 'detailOriginCate'){
-														$showPro = $objPro->getProductCategoryLimitO($client_id, $client_origin, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitOL($client_id, $client_origin, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimitO($client_id, $client_origin, $start, $limit);
+														}
 													}else{
-														$showPro = $objPro->getProductCategoryLimit($client_id, $start, $limit);
+														if(isset($client_line)){
+															$showPro = $objPro->getProductCategoryLimitL($client_id, $client_line, $start, $limit);
+														} else {
+															$showPro = $objPro->getProductCategoryLimit($client_id, $start, $limit);
+														}
 													}
 												}
 											}
@@ -831,7 +1879,17 @@
 																	<h2>
 																		<a href="?action=viewProduct&id=<?php echo $list['product_id']; ?>"><?php echo $list['product_name']; ?></a>
 																	</h2>
-																	<div class="bg-icon">OI</div><div class="bg-icon">CO</div><div class="bg-icon">N</div>
+																	<?php
+																	$objProductLine = new ProductLine();
+																	$showCompact = $objProductLine->getProductLineByIdPL($list['product_id']);
+																	if($showCompact != ""){
+																		foreach($showCompact as $compact){
+																	?>
+																			<div class="bg-icon"><?php echo $compact[0] ?></div>
+																	<?php
+																		} 
+																	}
+																	?>
 																	<br/>
 																	<p class="desc"><?php echo nl2br($list['product_description']); ?></p>
 																		<?php 
